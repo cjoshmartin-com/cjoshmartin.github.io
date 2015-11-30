@@ -1,0 +1,56 @@
+#tweet {
+padding-left:3%;
+}
+#twitterbox2 {
+padding-left: 7%;
+}
+#maker {
+color:#000000;
+
+font-weight:100;
+font-style: oblique;
+font-size: x-small;
+margin-top: 0;
+}
+#company {
+padding-top: 10%;
+text-transform:capitalize;
+}
+.blacktext {
+color:#000000;
+}
+body {
+overflow-x:hidden;
+
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+.header-acct-961 {
+		width: 960px; 
+		margin: 0 auto; 
+		padding-left: 43%;
+		}
+		
+
+		.header-acct-961 a:link, .header-acct-961 a:visited {
+			color:#ae8f2f;
+			font-size:12px;
+			font-weight:900;
+			text-transform:;
+			line-height:30px;
+			display:inline-block;
+			-webkit-transition: color .2s;
+			transition: color .2s;
+			margin-left:10px;
+		}
+
+			.header-acct-961 a:hover, .header-acct-961 a:active {
+				color:#f2dd9d;
+			}
+			
+			.float-right {
+			float: right;
+			padding-right: 3%;
+			padding-left: 2.5%;
+			}
