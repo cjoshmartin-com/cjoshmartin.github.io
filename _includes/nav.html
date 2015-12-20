@@ -5,9 +5,7 @@
                 <li class="{% if page.url == '/index.html' %}active{% endif %}">
                 <a href="index.html">Home</a></li>
                 <li class="dropdown
-                {% if page.url == '/project.html' %}
-                active
-                {% elsif page.url == '/Resume.html' %}
+                {% if page.url == '/project.html' or page.url == '/Resume.htm' %}
                 active
                 {% endif %}">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="project.html">Professional

@@ -1,0 +1,12 @@
+---
+layout: blog
+title: Programming
+---
+
+<ul>
+  {% for post in site.category.programming %}
+  <li><a href="{{post.url}}">{{post.title}}</a>
+    <p>{{post.meta}}</p>
+  </li>
+  {% endfor %}
+</ul>
