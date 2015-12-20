@@ -1,0 +1,2 @@
+exclude: ['.git','CNAME','.DS_Store','404.md','404.html']
+title: Josh Martin's Site
