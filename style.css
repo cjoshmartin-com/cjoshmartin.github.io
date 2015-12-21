@@ -1,9 +1,29 @@
-#wrapper {
-  width: 45%;     /* specify a width! */
+.wrapper {
+  width: 50%;     /* specify a width! */
   margin: 0 auto; /* center */
   font-family: 'Raleway', sans-serif;
+  text-transform: capitalize;
+  tex
+}
+.footerleft{
+  background-color: lightblue;
+}
+.footeright {
+  padding-top: 20px;
+  background-color: lightblue;
+}
+a {
+  color: black;
 }
 a:visited {
   text-decoration: none;
   color: black;
+}
+footer {
+  padding-top: 10px;
+  position: fixed;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     height: 50px;
 }
