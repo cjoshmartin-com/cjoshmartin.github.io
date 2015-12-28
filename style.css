@@ -1,16 +1,11 @@
 .wrapper {
   width: 50%;     /* specify a width! */
   margin: 0 auto; /* center */
+}
+.ralewayText {
   font-family: 'Raleway', sans-serif;
   text-transform: capitalize;
-  tex
-}
-.footerleft{
-  background-color: lightblue;
-}
-.footeright {
-  padding-top: 20px;
-  background-color: lightblue;
+
 }
 a {
   color: black;
@@ -26,4 +21,11 @@ footer {
      left: 0;
      right: 0;
      height: 50px;
+}
+
+/* fixing the ugly space under the about me header */
+#fixaboutme {
+  margin-bottom: 0px;
+  margin-top: 20px;
+  padding-bottom: 0px;
 }
