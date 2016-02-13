@@ -1,7 +1,7 @@
 ---
 layout: Blog-post
-title: How I made this site
-meta: A detailed guide on how I made this site
+title: Cheese is Great
+meta: I love cheese, especially cheese and wine airedale. Fondue cottage cheese queso fromage frais edam red leicester parmesan cheese triangles. Pecorino mozzarella squirty cheese ricotta cauliflower cheese cheddar fondue cheeseburger. Fromage brie fondue halloumi danish fontina stilton macaroni cheese smelly cheese. Fromage frais parmesan ricotta queso manchego jarlsberg everyone loves cow. Stinking bishop emme...
 category: programming
 ---
 

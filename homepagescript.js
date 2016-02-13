@@ -1,6 +1,6 @@
 //this was inspaired by this script https://github.com/mxstbr/sirke.is/blob/master/script.js
 
-var occupation = ['📚Student ','🖥 IT Assistant','💼 Job Board Deveopler ', '🇵🇭 FSA Webmaster', ' 💃 Breakdancer'];
+var occupation = ['📚Student ','🖥 Freelance Webdesigner','💼 (IUPUI SD) Job Board Deveopler ', '🇵🇭 FSA Webmaster', ' 💃 Breakdancer'];
 var copy = occupation.slice();
 var pauseTime = 3000;
 var newOccupation;

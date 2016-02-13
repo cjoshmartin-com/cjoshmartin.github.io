@@ -1,4 +1,8 @@
-
+<!--fix this to make it stick when scrolling
+  http://www.w3schools.com/bootstrap/bootstrap_affix.asp
+  http://www.w3schools.com/bootstrap/bootstrap_ref_js_affix.asp
+add data-spy="affix" to nav
+-->
           <header>
               <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -11,18 +15,20 @@
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-              <li class="{% if page.url == 'index.html' %}active{% endif %}"><a href="index.html">Home</a></li>
+              <li class="{% if page.url == 'index.html' %}active{% endif %}"><a href="{{ site.url }}/index.html">Home</a></li>
               <li class="dropdown">
                 <a class="dropdown-toggle {% if page.url == '/project.html' or page.url == '/Resume.htm' %}
                 active
                 {% endif %}" data-toggle="dropdown" href="#">Professional <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="project.html">Portfolio</a></li>
-                    <li><a href="Resume.htm">Resume</a></li>
+                  <li><a href="{{ site.url }}/project.html">Portfolio</a></li>
+                    <li><a href="{{ site.url }}/Resume.htm">Resume</a></li>
                 </ul>
               </li>
               <li class="{% if page.url == '/booking.html' %}active{% endif %}">
-                <a href="booking.html">Booking</a></li>
+                <a href="{{ site.url }}/booking.html">Booking</a></li>
+                <li class="{% if page.url == 'recent-post.html' %}active{% endif %}">
+                  <a href="{{ site.url }}/recent-post.html">Blog</a></li>
             </ul>
           </div>
         </div>

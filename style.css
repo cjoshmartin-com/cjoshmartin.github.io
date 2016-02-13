@@ -1,5 +1,5 @@
 body {
-  background-color: #f2f2f2;
+  position: relative;
 }
 .wrapper {
   width: 50%;     /* specify a width! */
@@ -36,3 +36,9 @@ footer {
   margin-right: 2px;
   margin-left: 0px;
 }
+/*fixes menu bar */
+.affix {
+      top: 0;
+      margin-bottom: 100px;
+      width: 100%;
+  }
