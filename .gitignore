@@ -1,1 +1,6 @@
-_site
+_site/
+.sass-cache/
+node_modules/
+Gruntfile.js
+package.json
+.jekyll-metadata
