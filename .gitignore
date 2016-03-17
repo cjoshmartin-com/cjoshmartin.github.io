@@ -4,3 +4,5 @@ node_modules/
 Gruntfile.js
 package.json
 .jekyll-metadata
+
+gulpfile.js
