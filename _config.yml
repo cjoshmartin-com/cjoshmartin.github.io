@@ -1,3 +1,3 @@
 exclude: ['.git','CNAME','.DS_Store','404.md','404.html']
-baseurl: ""
+baseurl: "cjoshmartin.com"
 title: Josh Martin's Site

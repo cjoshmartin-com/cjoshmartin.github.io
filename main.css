@@ -2,7 +2,6 @@ body {
   background: url("../images/background.jpg") no-repeat center center fixed;
   background-size: cover;
   font-family: 'Open Sans Condensed';
-  background-color: #1a6e66;
 }
 
 .form  li {
