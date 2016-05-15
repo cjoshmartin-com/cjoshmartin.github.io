@@ -1,0 +1,7 @@
+---
+layout: Blog-post
+title: Building My First Apps
+meta: How I learned to use MIT App Inventor to build my first (crappy) Apps
+category: work
+---
+{{content}}
