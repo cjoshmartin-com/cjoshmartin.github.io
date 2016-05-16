@@ -1,72 +1,71 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} |{% endif %} Josh Martin </title>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/assets/css/photon.css">
-
-    <!-- Electron Javascript -->
-    <script src="/assets/js/app.js" charset="utf-8"></script>
-  </head>
+  {% include Photon/header.html %}
 
   <body>
-    <!-- Wrap your entire app inside .window -->
+    {% include Photon/titleandtabs.html %}
     <div class="window">
       <header class="toolbar toolbar-header">
-    <h1 class="title">Projects</h1>
-  </header>
-
-  <div class="tab-group">
-    <div class="tab-item">
-      Past employment and Work Done
-    </div>
-    <div class="tab-item active">
-      Class Work
-    </div>
-    <div class="tab-item">
-      Graphic Design and freetime work
-    </div>
-    <div class="tab-item tab-item-fixed">
-      <span class="icon icon-plus"></span>
-    </div>
-  </div>
+      <h1 class="title">Projects</h1>
+      </header>
+      {% include Photon/titleandtabs.html %}
       <!-- Your app's content goes inside .window-content -->
       <div class="window-content">
         <div class="pane-group">
-          <div class="pane-sm sidebar">
-              <nav class="nav-group">
-      <h5 class="nav-group-title">Favorites</h5>
-      <a class="nav-group-item" href="/index.html">
-        <span class="icon icon-home"></span>
-        Home
-      </a>
-      <a class="nav-group-item active">
-        <span class="icon icon-folder"></span>
-        Projects
-      </a>
-      <a class="nav-group-item" href="/assets/Resume.pdf">
-        <span class="icon icon-download"></span>
-        Resume
-      </a>
-      </nav>
-          </div>
+          {% include Photon/nav.html %}
            <div class="pane">
-          <table class="table-striped">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{content}}
-            </tbody>
-          </table>
+          {% include Photon/tablelayout.html %}
         </div>
       </div>
       </div>
     </div>
+    <script>
+
+    //script to change what tab appears to be active
+
+    //on click of "Past empolyment and ..." tab adds the class of active and removes from other classes
+    $('#tab1').click(function() {
+      $( this ).addClass('active');
+        if ( $('#tab2').hasClass('active') ) {
+            $('#tab2').removeClass('active');
+        } else {
+          $('#tab3').removeClass('active');
+
+        }//end of else
+
+      }//end of function
+
+    );//end of tab 1
+
+      //On click of Class work tab
+      $('#tab2').click(function() {
+
+        $( this ).addClass('active');
+          if ( $('#tab1').hasClass('active') ) {
+              $('#tab1').removeClass('active');
+          } else {
+            $('#tab3').removeClass('active');
+          }//end of else
+
+        }//end of function
+
+      );//end of tab 2
+
+        //on click of freetime tab
+        $('#tab3').click(function() {
+          $( this ).addClass('active');
+            if ( $('#tab2').hasClass('active') ) {
+                $('#tab2').removeClass('active');
+            } else {
+              $('#tab1').removeClass('active');
+            }//end of else
+
+          }//end of function
+
+        );//end of tab 3
+
+    </script>
+
+{%include footer.html%}
   </body>
+
 </html>
