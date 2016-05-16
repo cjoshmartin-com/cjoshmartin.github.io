@@ -6,16 +6,18 @@ category: work
 ---
 
 
-In my senior year of high school I took what my high school called "Ap Computer Science", this class is equivalent to a a first semester of programming at a University learning Object-oriented programming in the  language of Java. In the previously year ( Junior year), I took two semester of the intro programming classes (Programming I and Programming II). In the intro programming classes I learned that Basics such as, IF statements, While loops, Arrays and other OOP concepts in the  languages of C++ and Visual basic we also build apps using MIT App inventor 2.
+In my senior year of high school I took what my high school called "Ap Computer Science", this class is equivalent to a first semester of programming at a University. We learned Object-oriented programming in the language of Java. In the previous year (Junior year), I took two semesters of the intro programming classes (Programming I and Programming II). In those intro programming classes I learned the basics concepts such as, IF statements, While loops, Arrays,and basic functions in the  languages of C++ and Visual basic we also build apps using MIT App inventor 2.
 
-In my Senior year, The Ap class when more in depth and we gained a better Knowledge of programming.
+In my Senior year, The Ap class went more in depth and I gained a better Knowledge on how to be a great programmer. Some of the  Important concepts from the class are found below, as well as the code.
 
-[insert table of context]
+In all these class was a pain in my butt, but I am glad I took it. It has really help me, I can pick up on any language now and start programming. It was a really helpful class for my life as well it has made looking for jobs a lot easier.
+
 
 ##GUI's
 
 {% highlight Java %}
-         //Š A+ Computer Science  -  www.apluscompsci.com
+
+         //A+ Computer Science  -  www.apluscompsci.com
         //Name - Josh Martin
         //Date - 9/24/2014
         //Class - period 1
@@ -95,8 +97,9 @@ In my Senior year, The Ap class when more in depth and we gained a better Knowle
 ##importing  packages and use the Math class and Scanner.
 
 {% highlight Java %}
-   // Project 8-3
 
+
+    // Project 8-3
     import java.util.Scanner;
     import java.lang.Math;
     public class Project83 {
