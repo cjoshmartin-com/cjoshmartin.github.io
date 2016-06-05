@@ -2,7 +2,7 @@
 layout: Blog-post
 title: Backbone.JS
 meta: how backbonejs is organized and sample code
-category:work
+category: work
 ---
 
 [the front-end]:https://programmers.stackexchange.com/questions/171203/what-are-the-differences-between-server-side-and-client-side-programming
