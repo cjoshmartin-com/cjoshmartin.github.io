@@ -7,7 +7,7 @@
       <header class="toolbar toolbar-header">
       <h1 class="title">Projects</h1>
       </header>
-      {% include Photon/titleandtabs.html %}
+
       <!-- Your app's content goes inside .window-content -->
       <div class="window-content">
         <div class="pane-group">
@@ -18,53 +18,6 @@
       </div>
       </div>
     </div>
-    <script>
-
-    //script to change what tab appears to be active
-
-    //on click of "Past empolyment and ..." tab adds the class of active and removes from other classes
-    $('#tab1').click(function() {
-      $( this ).addClass('active');
-        if ( $('#tab2').hasClass('active') ) {
-            $('#tab2').removeClass('active');
-        } else {
-          $('#tab3').removeClass('active');
-
-        }//end of else
-
-      }//end of function
-
-    );//end of tab 1
-
-      //On click of Class work tab
-      $('#tab2').click(function() {
-
-        $( this ).addClass('active');
-          if ( $('#tab1').hasClass('active') ) {
-              $('#tab1').removeClass('active');
-          } else {
-            $('#tab3').removeClass('active');
-          }//end of else
-
-        }//end of function
-
-      );//end of tab 2
-
-        //on click of freetime tab
-        $('#tab3').click(function() {
-          $( this ).addClass('active');
-            if ( $('#tab2').hasClass('active') ) {
-                $('#tab2').removeClass('active');
-            } else {
-              $('#tab1').removeClass('active');
-            }//end of else
-
-          }//end of function
-
-        );//end of tab 3
-
-    </script>
-
 {%include footer.html%}
   </body>
 
