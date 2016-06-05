@@ -102,7 +102,7 @@ a:hover, a:focus {
   color: #000; }
 
 body {
-  background-image: url(../img/bg.jpg);
+  background-image: url(../images/lowPoly.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
