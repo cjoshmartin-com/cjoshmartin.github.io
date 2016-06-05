@@ -90,7 +90,7 @@ category:work
 
     });
   ```
-###fragments
+###Fragments
 a view is a modudual part of the website and router loads that part when called
 
 ## Events
