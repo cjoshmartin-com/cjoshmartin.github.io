@@ -21,6 +21,7 @@ category: work
 ## building blocks to get started
 
   {% highlight html %}
+  
     <script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js" type="text/javascript"></script>
@@ -44,6 +45,7 @@ category: work
   Backbone uses the url to understand the the application stat to be sent or present to user. [Examples of Routers](http://www.tutorialspoint.com/backbonejs/backbonejs_router.htm)
 
   {% highlight javascript %}
+  
     //will track when you move in the browser
     $(document).ready(function () {
       wineApp = new AppRouter();
@@ -61,6 +63,7 @@ category: work
 
   **IMPORANT**: *el* and *$el* (jquery version) means the element property (e.g. div, p, h1 ).
   Backbone auto sets element properties on view but you can manually set it yourself
+  
   {% highlight javascript %}
         /*
         goes in side the html body
@@ -105,6 +108,7 @@ a view is a modudual part of the website and router loads that part when called
 [Examples of models.](http://www.tutorialspoint.com/backbonejs/backbonejs_model.htm)
 
   {% highlight javascript %}
+  
     //creates a model named wine
     Wine = Backbone.Model.extend();
     //creates an instance of wine
@@ -127,6 +131,7 @@ a view is a modudual part of the website and router loads that part when called
   It also takes the request from the view, bind events and synchronizes the data with requested data and send response back to the HTTP client. [Examples of Collections.](http://www.tutorialspoint.com/backbonejs/backbonejs_collection.htm)
 
   {% highlight javascript %}
+  
     // Model
     Wine = Backbone.Model.extend();
 
@@ -146,4 +151,5 @@ a view is a modudual part of the website and router loads that part when called
     wines.each( function(model) {
       document.write(firstWine.get("name"));
     });
+    
   {% endhighlight %}
