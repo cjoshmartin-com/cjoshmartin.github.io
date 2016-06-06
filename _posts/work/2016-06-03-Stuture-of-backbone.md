@@ -1,7 +1,7 @@
 ---
 layout: Blog-post
 title: Backbone.JS
-meta: how backbonejs is organized and sample code
+meta: how backbone js is organized and sample code
 category: work
 ---
 
@@ -13,17 +13,19 @@ category: work
 
 
 
-
+#  Backbone.js
 
 ![flowcart]
 
 ---
 ## building blocks to get started
-```html5
-  <script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js" type="text/javascript"></script>
-```
+
+  {% highlight html %}
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js" type="text/javascript"></script>
+
+  {% endhighlight %}
 
 ## HTTP Request
   The HTTP client sends a HTTP request to a server in the form of request message where web browsers, search engines etc acts like HTTP clients.
@@ -41,13 +43,13 @@ category: work
 
   Backbone uses the url to understand the the application stat to be sent or present to user. [Examples of Routers](http://www.tutorialspoint.com/backbonejs/backbonejs_router.htm)
 
-  ```javascript
+  {% highlight javascript %}
     //will track when you move in the browser
     $(document).ready(function () {
       wineApp = new AppRouter();
       Backbone.history.start();
     });
-  ```
+  {% endhighlight %}
 
 ## View
 
@@ -59,38 +61,39 @@ category: work
 
   **IMPORANT**: *el* and *$el* (jquery version) means the element property (e.g. div, p, h1 ).
   Backbone auto sets element properties on view but you can manually set it yourself
-  ```javascript
-  /*
-  goes in side the html body
-*/
-  div id="container">Loading...</div>
+  {% highlight javascript %}
+        /*
+        goes in side the html body
+      */
+        div id="container">Loading...</div>
 
-  <script type="text/javascript">
-  Homeview = Backbone.View.extend({
-      //where to show the element
-      el:'#container',
-      initialize: function() {
-        this.render();
-      },
-      //when this view gets Initialed renders the following html
-      render: function() {
-        this.$el.empty();
-        //of this instance set the the jquery version of this this text element property to be an h1
-        this.$el.html("(<h1>hello</h1>");
+        <script type="text/javascript">
+        Homeview = Backbone.View.extend({
+            //where to show the element
+            el:'#container',
+            initialize: function() {
+              this.render();
+            },
+            //when this view gets Initialed renders the following html
+            render: function() {
+              this.$el.empty();
+              //of this instance set the the jquery version of this this text element property to be an h1
+              this.$el.html("(<h1>hello</h1>");
 
-        //show it
-        return this;
-      }
-  });
-  // creates an instance of of Homeview
-  wineApp = new Homeview();
+              //show it
+              return this;
+            }
+        });
+        // creates an instance of of Homeview
+        wineApp = new Homeview();
 
- </script>
+       </script>
 
 
-    });
-  ```
-###Fragments
+          });
+
+  {% endhighlight %}
+###fragments
 a view is a modudual part of the website and router loads that part when called
 
 ## Events
@@ -99,9 +102,9 @@ a view is a modudual part of the website and router loads that part when called
 
 ## Models
   **Heart of the Javascript app** that retrieves and populates the data.Model takes the HTTP request from the events passed by the view using the router and synchronizes the data from database and send the response back to the client.
-[Examples of models.]( http://www.tutorialspoint.com/backbonejs/backbonejs_model.htm)
+[Examples of models.](http://www.tutorialspoint.com/backbonejs/backbonejs_model.htm)
 
-  ```javascript
+  {% highlight javascript %}
     //creates a model named wine
     Wine = Backbone.Model.extend();
     //creates an instance of wine
@@ -116,14 +119,14 @@ a view is a modudual part of the website and router loads that part when called
     //changes name of Shit Wine to Best wine
     firstWine.set("name","Best Wine");
 
-  ```
+  {% endhighlight %}
 
 ## Collection
   Collection is a set of models which binds events, when the model has been modified in the collection. Collection contains list of models that can be processed in the loop and supports sorting and filtering. When creating a collection, we can define what type of model that collection is going to have along with the instance of properties. Any event triggered on a model, which will also trigger on the collection in the model.
 
   It also takes the request from the view, bind events and synchronizes the data with requested data and send response back to the HTTP client. [Examples of Collections.](http://www.tutorialspoint.com/backbonejs/backbonejs_collection.htm)
 
-  ```javascript
+  {% highlight javascript %}
     // Model
     Wine = Backbone.Model.extend();
 
@@ -143,4 +146,4 @@ a view is a modudual part of the website and router loads that part when called
     wines.each( function(model) {
       document.write(firstWine.get("name"));
     });
-  ```
+  {% endhighlight %}
