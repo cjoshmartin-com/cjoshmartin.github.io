@@ -13,7 +13,7 @@ In my Senior year, The Ap class went more in depth and I gained a better Knowled
 In all these class was a pain in my butt, but I am glad I took it. It has really help me, I can pick up on any language now and start programming. It was a really helpful class for my life as well it has made looking for jobs a lot easier.
 
 
-##GUI's
+## GUI's
 
 {% highlight Java %}
 
@@ -94,7 +94,7 @@ In all these class was a pain in my butt, but I am glad I took it. It has really
         }
 {% endhighlight %}
 
-##importing  packages and use the Math class and Scanner.
+## importing  packages and use the Math class and Scanner.
 
 {% highlight Java %}
 
@@ -140,7 +140,7 @@ In all these class was a pain in my butt, but I am glad I took it. It has really
 
 {% endhighlight %}
 
-##Functions
+## Functions
 
 {% highlight Java %}
       import java.util.Scanner;
@@ -241,7 +241,7 @@ In all these class was a pain in my butt, but I am glad I took it. It has really
       }// end of project class
 {% endhighlight %}
 
-##Recursion
+## Recursion
 {% highlight Java %}
 
     //© A+ Computer Science  -  www.apluscompsci.com
@@ -270,7 +270,7 @@ In all these class was a pain in my butt, but I am glad I took it. It has really
     }
 {% endhighlight %}
 
-##Arrays
+## Arrays
 
 {% highlight Java %}
 
@@ -332,7 +332,7 @@ In all these class was a pain in my butt, but I am glad I took it. It has really
 
 {% endhighlight %}
 
-###Arraylist
+### Arraylist
 {% highlight Java %}
 
     //Project 14-1
@@ -392,7 +392,7 @@ In all these class was a pain in my butt, but I am glad I took it. It has really
       					             System.out.println( "No Negitive!");
       }
 {% endhighlight %}
-##Sorts and final project
+## Sorts and final project
 
     {% highlight Java %}
     //© A+ Computer Science  -  www.apluscompsci.com
