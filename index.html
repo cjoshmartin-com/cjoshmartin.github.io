@@ -13,15 +13,27 @@
 
 	<div class="hero">
 			<div class="message">
-				<span>JOSH MARTIN</span>
-				<span>LEARNS TO BE</span>
-				<span id="occupation">FULLSTACK</span>
+				<span id ="text">JOSH MARTIN LEARNS TO BE <span id="occupation">FULLSTACK</span> </span>
 			</div>
 			<a href="/Projects"><div class="call-to-action">LEARN MORE NOW &gt;</div></a>
 	</div>
 
 	<script src="assets/Old files/homepagescript.js"></script>
+	<script src="../index.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+<script>
+	var el = document.getElementById('text');
+	var split = new SplitInLines(el);
+	var lines = document.querySelectorAll('.split-lines-inner');
 
+	var tl = new TimelineMax({
+		onComplete: () => {
+			split.clear();
+		}
+	});
+
+	tl.staggerFromTo(lines, 0.5, { yPercent: 100 }, { yPercent: 0 }, 0.1);
+	</script>
 	{% include footer.html %}
 </body>
 </html>
