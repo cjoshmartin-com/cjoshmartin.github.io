@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <span id="work-title">WORK</span>
+  <div class="row center-block">
+    {% for post in site.data.work %}
+    <div class="col-xs-6 col-md-3 work-grid">
+      <div class="img ">
+        <img class="work-image" src="{{post.img}}" alt="" />
+        <div class="overlay">
+                <a href="{{post.link}}" class="expand">{{post.name}} <br><br> {{post.date}}</a>
+              </div>
+      </div>
+      </div>
+
+    {% endfor %}
+
+  </div>
+</div>

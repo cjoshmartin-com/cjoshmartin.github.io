@@ -1,39 +1,14 @@
 ---
-
+layout: default
+title: Welcome
 ---
-<html>
-<head>
-	<title>Welcome! | Josh Martin</title>
+		<div class="effect-6">
+			{% include work.html %}
+		</div>
+		
+				<div class="col-lg-12">
+					{% include contactform.html %}
+				</div>
 
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
-	<link rel="stylesheet" href="main.css">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-</head>
-<body>
-
-	<div class="hero">
-			<div class="message">
-				<span id ="text">JOSH MARTIN LEARNS TO BE <span id="occupation">FULLSTACK</span> </span>
-			</div>
-			<a href="/Projects"><div class="call-to-action">LEARN MORE NOW &gt;</div></a>
-	</div>
-
-	<script src="assets/Old files/homepagescript.js"></script>
-	<script src="../index.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
-<script>
-	var el = document.getElementById('text');
-	var split = new SplitInLines(el);
-	var lines = document.querySelectorAll('.split-lines-inner');
-
-	var tl = new TimelineMax({
-		onComplete: () => {
-			split.clear();
-		}
-	});
-
-	tl.staggerFromTo(lines, 0.5, { yPercent: 100 }, { yPercent: 0 }, 0.1);
-	</script>
-	{% include footer.html %}
 </body>
 </html>

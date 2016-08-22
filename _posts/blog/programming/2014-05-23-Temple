@@ -1,0 +1,10 @@
+---
+layout: Blog-post
+title:
+meta:
+category: programming
+---
+
+{% highlight javascript %}
+
+{% endhighlight %}

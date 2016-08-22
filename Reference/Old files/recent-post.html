@@ -1,0 +1,11 @@
+---
+layout: blog
+title: Recent post
+---
+<div style=" padding: 10px 90px">
+{% for post in site.posts %}
+<h1><a href="{{post.url}}">{{post.title}}</a></h1>
+  <p>{{post.meta}}</p>
+</li>
+{% endfor %}
+</div>

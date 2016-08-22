@@ -1,0 +1,22 @@
+
+- name: 'IU School of Dentistry Professional Pathways'
+  img: '/assets/images/IUDS.jpg'
+  link: 'https://iupui-dentistry-csm.symplicity.com/students/index.php?signin_tab=0'
+  date: 'May 2016'
+
+- name: 'Hamilton Southeastern High School News'
+  img: '/assets/images/hseNews.jpg'
+  link: 'http://www.hsenews.com/'
+  date: 'Jan 2015'
+
+- name: 'App Inventor'
+  img:  'assets/images/carfinderapp.png'
+  link: "https://sites.google.com/site/joshmartinsappinventorsite/blog"
+  date: 'Apr 2014'
+# -name: Launch Fishers
+#   link:
+#   img:
+#   date:
+# -name:
+#   img:
+#   date:
