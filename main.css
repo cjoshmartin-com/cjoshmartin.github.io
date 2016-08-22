@@ -8,7 +8,7 @@ body{
 ****************** Header ***************
 =========================================*/
 header {
-  background: url(../images/lowPoly.jpg?1465149759) no-repeat center center fixed;
+  background: url(assets/images/lowPoly.jpg) no-repeat center center fixed;
   height: 100vh;
   background-size: cover;
   background-position: center;
