@@ -1,0 +1,45 @@
+body {
+  position: relative;
+}
+.wrapper {
+  width: 50%;     /* specify a width! */
+  margin: 0 auto; /* center */
+}
+.ralewayText {
+  font-family: 'Raleway', sans-serif;
+
+}
+h1,h2,h3,h4,h5,h6{
+  text-transform: capitalize;
+
+}
+
+a {
+  color: black;
+}
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+footer {
+  padding-top: 10px;
+  position: fixed;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     height: 50px;
+}
+
+/* fixing the ugly space under the about me header */
+.fixcontent {
+  padding: 0px;
+  margin-right: 2px;
+  margin-left: 0px;
+}
+/*fixes menu bar */
+.affix {
+      top: 0;
+      margin-bottom: 100px;
+      width: 100%;
+  }
+  
