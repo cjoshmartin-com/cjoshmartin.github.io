@@ -192,7 +192,7 @@ article {
 .work-form{
 
   background-image: url("assets/images/contactbackground.jpg");
-  height: 40vh;
+  /*height: 40vh;*/
   background-size: cover;
   background-position: center;
 }
