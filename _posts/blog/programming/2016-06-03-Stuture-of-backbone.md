@@ -111,14 +111,14 @@ a view is a modudual part of the website and router loads that part when called
     Wine = Backbone.Model.extend();
     //creates an instance of wine
     firstWine = new Wine({
-      name: 'Shit Wine'
+      name: 'Crap Wine'
       });
     //shows the name of First Wine in the console log
     console.log(firstWine.toJSON());
     //writes to the webpage and displays the whatever in in the name field
     document.write(firstWine.get("name"));
 
-    //changes name of Shit Wine to Best wine
+    //changes name of Crap Wine to Best wine
     firstWine.set("name","Best Wine");
 
   {% endhighlight %}
@@ -141,7 +141,7 @@ a view is a modudual part of the website and router loads that part when called
     });
     //the collection
     flavorOfwines= new Wine([
-      {name: 'Shit Wine', taste: 'Shity'},
+      {name: 'Crap Wine', taste: 'Crappy'},
       {name:'Best Wine', taste: 'great'}
     ]);
 
