@@ -6,3 +6,5 @@ package.json
 .jekyll-metadata
 
 gulpfile.js
+
+*.icloud
