@@ -11,3 +11,6 @@ This site is hosted on  github pages (https://pages.github.com/) and uses cloudf
   *  mxstbr @ mxstbr.com
 
   Happy coding and keep learning :-)
+
+# update March 7,2017
+I often give on this site because it keeps giving me a headache but I often update a few things.... maybe I can improve this more this summer.
