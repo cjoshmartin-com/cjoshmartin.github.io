@@ -1,6 +1,9 @@
 @import 'https://fonts.googleapis.com/css?family=Bungee';
 @import 'https://fonts.googleapis.com/css?family=Shadows+Into+Light';
 
+html{
+    background-color: black;
+}
 body{
   background-color: black;
 }
@@ -9,7 +12,7 @@ body{
 =========================================*/
 header {
   background: url(assets/images/lowPoly.jpg) no-repeat center center fixed;
-  height: 100vh;
+  height: 60vh;
   background-size: cover;
   background-position: center;
   font-family: 'Open Sans Condensed';
@@ -104,8 +107,6 @@ a{
   padding-left: 30px  !important;
 }
 
-
-
 /*=======================================
 ************** Media Queries ************
 =========================================*/
@@ -115,8 +116,14 @@ a{
 }
 } /* end of max-width 384*/
 @media (max-width:823px) {
+    body{
+      overflow-x: hidden;
+    }
+    nav{
+      max-width: 90%;
+    }
     .hero{
-          left: 27%;
+          left: 6%;
     }
     .hero .message span {
       font-size: 41px;
@@ -132,7 +139,15 @@ a{
       margin-left: 20%;
       margin-top: 15%;
     }
-
+  .dance{
+        display: none;
+  }
+  #contact-title{
+    font-size: 30px  !important;;
+  }
+  #contact_form{
+    margin-left: 2%  !important;;
+  }
 } /* end of media max-width:823px*/
 @media (min-width:1401px) {
   .hero{
@@ -156,8 +171,9 @@ a{
 ************ Video and Dance Sec ********
 =========================================*/
 .dance{
-  height: 60vh;
+  height: 30vh;
   overflow-y: hidden;
+
   color:white;
 }
 
