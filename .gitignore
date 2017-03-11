@@ -1,10 +1,18 @@
 _site/
 .sass-cache/
 node_modules/
-Gruntfile.js
-package.json
 .jekyll-metadata
 
-gulpfile.js
-
 *.icloud
+
+*.DS_Store
+
+assets/.DS_Store
+
+assets/images/.DS_Store
+
+Projects/.DS_Store
+
+Reference/.DS_Store
+
+Reference/beta-work/.DS_Store

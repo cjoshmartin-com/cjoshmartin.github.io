@@ -197,12 +197,12 @@ article {
   background-position: center;
 }
 #contact-title{
-font-size: 65px;
-font-family: 'Shadows Into Light', cursive;
+font-size: 56px;
+font-family: initial;
 padding-left: 12%;
 }
 #contact_form{
-    margin-top: 4%;
+    margin-top: 0%;
     margin-left:11%;
 }
 
