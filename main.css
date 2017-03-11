@@ -191,7 +191,7 @@ article {
 =========================================*/
 .work-form{
 
-  background-image: url("assets/images/contactbackground.jpg");
+  background-image: url("assets/images/workformbackground.jpg");
   /*height: 40vh;*/
   background-size: cover;
   background-position: center;
@@ -199,11 +199,12 @@ article {
 #contact-title{
 font-size: 56px;
 font-family: initial;
-padding-left: 12%;
+padding-left: 18%;
+color: beige;
 }
 #contact_form{
     margin-top: 0%;
-    margin-left:11%;
+    margin-left:18%;
 }
 
 #success_message{ display: none;}
