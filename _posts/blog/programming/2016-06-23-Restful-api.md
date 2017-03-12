@@ -9,7 +9,8 @@ category: programming
   For an API to be RESTful is must be separate the client from server, not keep request information from another request, and uses HTTP/HTTPS methods.
 
 ### RESTful have four verbs:
-  ##### Get
+
+##### GET
   Retrives data from a source website.
 
   {% highlight javascript %}
@@ -21,14 +22,14 @@ category: programming
     console.log (xhr.statusText);
 
   {% endhighlight %}
-  ###### output
+###### output
     200
     OK
 
-  ##### POST
+##### POST
   sends new information to a website
-  ##### PUT
+##### PUT
   replaces old data with new data to a website
 
-  ##### DELETE
+##### DELETE
   deletes data selected.
