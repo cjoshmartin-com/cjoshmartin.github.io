@@ -2,7 +2,12 @@
 @import 'https://fonts.googleapis.com/css?family=Shadows+Into+Light';
 
 html{
-    background-color: black;
+    /*background-color: black;*/
+    font-size: 16px;
+
+    @media screen and (max-width:450px) {
+      font-size: 12px;
+    }
 }
 body{
   background-color: black;
@@ -128,26 +133,31 @@ a{
     .hero .message span {
       font-size: 41px;
     }
-    .work-grid:first-child{
+    /*.work-grid:first-child{
       margin-top: 12px;
-    }
+    }*/
     .work-grid:last-child{
       margin-top: 12px;
       margin-bottom: 10px;
     }
     #work-title{
-      margin-left: 20%;
-      margin-top: 15%;
+    /*display: none !important;*/
+    font-size: 55px;
+    margin-left: 23% !important;
+    margin-top: 17%;
     }
   .dance{
         display: none;
   }
-  #contact-title{
+  /*#contact-title{
     font-size: 30px  !important;;
-  }
+  }*/
   #contact_form{
     margin-left: 2%  !important;;
   }
+  .work-grid.col-xs-3 {
+     width: 0%;
+}
 } /* end of media max-width:823px*/
 @media (min-width:1401px) {
   .hero{
@@ -213,7 +223,7 @@ article {
   background-position: center;
 }
 #contact-title{
-font-size: 56px;
+font-size: 3rem;
 font-family: initial;
 padding-left: 18%;
 color: beige;
@@ -224,3 +234,10 @@ color: beige;
 }
 
 #success_message{ display: none;}
+
+
+/*footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}*/
