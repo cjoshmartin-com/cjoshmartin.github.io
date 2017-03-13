@@ -16,14 +16,21 @@
           {% include nav.html %}
                 </div>
                 <div class="row">
-                  <div class="col-md-8">
+                  <div class="col-md-10 col-xs-8">
+                    {% if page.title %}
+                    <h4 style="padding-left: 26px;"><small>{{page.title}}</small></h4>
+                         <hr>
+                      {% endif %}
                     {{content}}
                   </div>
-                  <!-- <div class="col-md-4">
-                    <p>
-                      hello hello
-                    </p>
-                  </div> -->
+                  <div class="col-md-2 col-xs-1">
+                    <ul>
+                      <li><a href="/recent-post.html">#Recent_Post</a></li>
+                      <li><a href="/work.html">#Work</a></li>
+                      <li><a href="#">#Programming</a></li>
+                    </ul>
+                     {% include advertisements.html %}
+                  </div>
                 </div>
           {% include footer.html %}
 

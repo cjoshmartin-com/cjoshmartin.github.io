@@ -1,11 +1,11 @@
 ---
 layout: blog
-title: Recent post
+title: Recent Post
 ---
-<div style=" padding: 10px 90px">
+
+<div style=" padding-left:18px; padding-right:0; margin-bottom: 41px;">
 {% for post in site.posts %}
-<h1><a href="{{post.url}}">{{post.title}}</a></h1>
+<h3><a href="{{post.url}}">{{post.title}}</a></h3>
   <p>{{post.meta}}</p>
-</li>
 {% endfor %}
 </div>

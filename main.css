@@ -124,9 +124,9 @@ a{
     body{
       overflow-x: hidden;
     }
-    nav{
+    /*nav{
       max-width: 96%;
-    }
+    }*/
     .hero{
           left: 6%;
     }

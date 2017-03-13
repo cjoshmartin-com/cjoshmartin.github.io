@@ -13,7 +13,7 @@ category: programming
 ##### GET
   Retrives data from a source website.
 
-  {% highlight javascript %}
+``` javascript
   var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://www.codecademy.com/", false);
     // Add your code below!
@@ -21,7 +21,7 @@ category: programming
     console.log (xhr.status);
     console.log (xhr.statusText);
 
-  {% endhighlight %}
+```
 ###### output
     200
     OK
