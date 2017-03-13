@@ -1,6 +1,6 @@
 ---
 layout: Blog-post
-title: Life lesson
+title: Life lessons
 meta: a list of things I have learned so far
 category: personal
 ---
