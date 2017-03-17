@@ -1,5 +1,7 @@
-@import 'https://fonts.googleapis.com/css?family=Bungee';
-@import 'https://fonts.googleapis.com/css?family=Shadows+Into+Light';
+/*@import 'https://fonts.googleapis.com/css?family=Bungee';*/
+@import url('https://fonts.googleapis.com/css?family=Unica+One');
+@import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i');
+
 
 html{
     /*background-color: black;*/
@@ -11,6 +13,7 @@ html{
 }
 body{
   background-color: black;
+  font-family: 'Vollkorn', serif !important;
 }
 /*=======================================
 ****************** Header ***************
@@ -20,7 +23,7 @@ header {
   height: 60vh;
   background-size: cover;
   background-position: center;
-  font-family: 'Open Sans Condensed';
+  font-family: 'Unica One', cursive;
 
 }
 
@@ -29,7 +32,38 @@ header {
   top: 36%;
   left: 36%;
   margin-top: -125px;
+  /* on load transition*/
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	-moz-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
+
+  /* on load transition*/
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
 .hero .message span {
   display: block;
   float: left;
@@ -63,7 +97,9 @@ header {
   color: turquoise;
   position: absolute;
   margin-left: 35%;
-  font-family: 'Bungee', cursive;
+  line-height: 2.5;
+  letter-spacing: -13px;
+  font-family: 'Unica One', cursive;
   -webkit-text-stroke: 1px white;
   text-shadow:
     3px 3px 0 #fff,
@@ -98,7 +134,7 @@ a{
 /*crops the image and set the box height*/
 .img{
     width: 246px;
-    height: 188px;
+    /*height: 188px;*/
     overflow: hidden;
     position: relative;
 }
@@ -112,71 +148,7 @@ a{
   padding-left: 30px  !important;
 }
 
-/*=======================================
-************** Media Queries ************
-=========================================*/
-@media (max-width:384px) {
-.hero{
-      left: 19%;
-}
-} /* end of max-width 384*/
-@media (max-width:823px) {
-    body{
-      overflow-x: hidden;
-    }
-    /*nav{
-      max-width: 96%;
-    }*/
-    .hero{
-          left: 6%;
-    }
-    .hero .message span {
-      font-size: 41px;
-    }
-    /*.work-grid:first-child{
-      margin-top: 12px;
-    }*/
-    .work-grid:last-child{
-      margin-top: 12px;
-      margin-bottom: 10px;
-    }
-    #work-title{
-    /*display: none !important;*/
-    font-size: 55px;
-    margin-left: 23% !important;
-    margin-top: 17%;
-    }
-  .dance{
-        display: none;
-  }
-  /*#contact-title{
-    font-size: 30px  !important;;
-  }*/
-  #contact_form{
-    margin-left: 2%  !important;;
-  }
-  .work-grid.col-xs-3 {
-     width: 0%;
-}
-} /* end of media max-width:823px*/
-@media (min-width:1401px) {
-  .hero{
-    top: 28%;
-    left: 36%;
-  }
-  .hero .message span {
-    font-size: 88px;
-  }
-}/* end of min-width 1401*/
-@media (min-width: 992px) {
-    .work-grid:first-child{
-      margin-left: 13%;
-    }
-     .effect-6{
-       padding-top: 30px;
-       padding-bottom: 40px;
-     }
-} /* end of media min-width 992px*/
+
 /*=======================================
 ************ Video and Dance Sec ********
 =========================================*/
@@ -224,8 +196,7 @@ article {
 }
 #contact-title{
 font-size: 3rem;
-font-family: initial;
-padding-left: 18%;
+padding-left: 23%;
 color: beige;
 }
 #contact_form{
@@ -241,3 +212,77 @@ color: beige;
   bottom: 0;
   width: 100%;
 }*/
+
+/*=======================================
+************** Media Queries ************
+=========================================*/
+@media (max-width:384px) {
+.hero{
+      left: 19%;
+}
+} /* end of max-width 384*/
+
+@media (max-width:823px) {
+    body{
+      overflow-x: hidden;
+    }
+
+    .hero{
+          left: 6%;
+    }
+    .hero .message span {
+      font-size: 41px;
+    }
+    /*.work-grid:first-child{
+      margin-top: 12px;
+    }*/
+    .work-grid:last-child{
+      margin-top: 12px;
+      margin-bottom: 10px;
+    }
+    #work-title{
+    /*display: none !important;*/
+    font-size: 55px;
+    margin-left: 23% !important;
+    margin-top: 17%;
+    }
+  .dance{
+        display: none;
+  }
+  /*#contact-title{
+    font-size: 30px  !important;;
+  }*/
+  #contact_form{
+    margin-left: 2%  !important;;
+  }
+  #contact-title{
+    font-size:2rem;
+    padding-left: 13%;
+  }
+  #about-me{
+    display: none;
+  }
+} /* end of media max-width:823px*/
+
+@media (min-width:1401px) {
+  .hero{
+    top: 28%;
+    left: 36%;
+  }
+  .hero .message span {
+    font-size: 88px;
+  }
+  #contact-title{
+    font-size: 6rem;
+    padding-left: 30%;
+  }
+}/* end of min-width 1401*/
+@media (min-width: 992px) {
+    .work-grid:first-child{
+      margin-left: 13%;
+    }
+     .effect-6{
+       padding-top: 30px;
+       padding-bottom: 40px;
+     }
+} /* end of media min-width 992px*/
