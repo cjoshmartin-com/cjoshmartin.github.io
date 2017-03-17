@@ -243,6 +243,7 @@ color: beige;
     #work-title{
     /*display: none !important;*/
     font-size: 55px;
+    letter-spacing: -.5rem;
     margin-left: 23% !important;
     margin-top: 17%;
     }
