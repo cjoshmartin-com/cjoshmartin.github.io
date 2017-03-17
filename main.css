@@ -29,8 +29,8 @@ header {
 
 .hero {
   position: absolute;
-  top: 36%;
-  left: 36%;
+  top: 30%;
+  left: 34%;
   margin-top: -125px;
   /* on load transition*/
   -webkit-animation: text-focus-in 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
@@ -198,7 +198,7 @@ header {
 #work-title{
   font-size: 129px;
   width: 129px;
-  z-index: 10000;
+  z-index: 100;
   color: turquoise;
   position: absolute;
   margin-left: 35%;
@@ -370,14 +370,11 @@ color: beige;
     font-size:2rem;
     padding-left: 13%;
   }
-  #about-me{
-    display: none;
-  }
 } /* end of media max-width:823px*/
 
 @media (min-width:1401px) {
   .hero{
-    top: 28%;
+    top: 18%;
     left: 36%;
   }
   .hero .message span {
