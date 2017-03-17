@@ -18,20 +18,13 @@
                 <div class="row">
                   <div class="col-md-8 col-xs-8">
                     {% if page.title %}
-                    <h4 style="padding-left: 26px;"><small>{{page.title}}</small></h4>
+                    <h4 class="text-capitalize" style="padding-left: 26px;"><small>{{page.title}}</small></h4>
                          <hr>
                       {% endif %}
                     {{content}}
                   </div>
                   <div class="col-md-4 col-xs-4">
                     <!-- author shit -->
-                      <br>
-                    <ul>
-                      <li><a href="/recent-post.html">#Recent_Post</a></li>
-                      <li><a href="/work.html">#Work</a></li>
-                      <li><a href="/programming.html">#Programming</a></li>
-                      <li><a href="/personal.html">#Personal</a></li>
-                    </ul>
                      {% include advertisements.html %}
                   </div>
                 </div>
