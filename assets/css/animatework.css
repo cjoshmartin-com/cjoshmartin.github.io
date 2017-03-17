@@ -15,8 +15,8 @@
 .effects .img:nth-child(n) {
   margin-right: 5px;
 }
-.effects .img:first-child {
-  margin-left: -15px;
+.img:first-child {
+  margin-left: 50%;
 }
 .effects .img:last-child {
   margin-right: 0;
@@ -69,40 +69,24 @@ a.expand {
   text-align: center;
   color: #fff;
   font-weight: 700;
-  font-size: 15px;
+  /*font-size: 15px;*/
 
 }
-
-
-/* ============================================================
-  EFFECT 6 - ICON BOUNCE IN
-============================================================ */
-.effect-6{
-  background-color: rgba(0, 0, 0, 1);
-}
-.effect-6 .overlay {
+#effect-4 .overlay {
   top: 0;
   bottom: 0;
-  left: 0;
   right: 0;
-  opacity: 0;
+  width: 0;
+  height: 100%;
 }
-.effect-6 .overlay a.expand {
-  left: 0;
-  right: 0;
-  top: 0;
-  margin: 0 auto;
-  opacity: 0;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+#effect-4 .overlay a.expand {
+  top: 36%;
+  bottom: 0;
+  position: relative;
 }
-.effect-6 .img.hover .overlay {
-  opacity: 1;
+#effect-4 .img {
+  overflow: hidden;
 }
-.effect-6 .img.hover .overlay a.expand {
-  top: 40%;
-  margin-top: -30px;
-  opacity: 1;
+#effect-4 .img.hover .overlay {
+  width: 100%;
 }

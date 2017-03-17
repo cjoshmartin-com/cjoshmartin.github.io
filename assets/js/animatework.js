@@ -22,13 +22,13 @@ $(document).ready(function(){
         // handle the mouseenter functionality
         $(".img").mouseenter(function(){
             $(this).addClass("hover");
-            $("#work-title").fadeOut('fast').hide();
+            $("#work-title").fadeOut('slow').hide();
                             })
         // handle the mouseleave functionality
         .mouseleave(function(){
             $(this).removeClass("hover");
             $("#work-title").fadeIn('fast');
-            
+
         });
     }
 });

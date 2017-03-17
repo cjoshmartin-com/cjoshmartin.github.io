@@ -124,8 +124,10 @@ header {
   transition: margin 0.2s;
 }
 
+
+
 /*
-animation for hover
+animation for hover... yo if you looking for how to change the hover effect go look at animate work
 */
 
 a{
@@ -148,6 +150,9 @@ a{
   padding-left: 30px  !important;
 }
 
+.nav-tabs>li>a {
+  line-height: 2 !important;
+}
 
 /*=======================================
 ************ Video and Dance Sec ********
@@ -233,9 +238,9 @@ color: beige;
     .hero .message span {
       font-size: 41px;
     }
-    /*.work-grid:first-child{
+    .work-grid:first-child{
       margin-top: 12px;
-    }*/
+    }
     .work-grid:last-child{
       margin-top: 12px;
       margin-bottom: 10px;
@@ -250,9 +255,6 @@ color: beige;
   .dance{
         display: none;
   }
-  /*#contact-title{
-    font-size: 30px  !important;;
-  }*/
   #contact_form{
     margin-left: 2%  !important;;
   }

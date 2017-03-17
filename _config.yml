@@ -1,5 +1,5 @@
 exclude: ['.git','CNAME','.DS_Store','config.ru', 'Gemfile', 'Gemfile.lock', 'vendor','Procfile', 'Rakefile']
-title: Josh Martin's Site
+title: Josh Martin
 
 markdown: kramdown
 highlighter: rouge
