@@ -1,28 +1,17 @@
 ---
-layout:
+layout: default
 title: Welcome
 ---
 {% include head.html %}
  <div >
 <!-- work include goes here -->
+{% include work.html %}
 </div>
 		<body>
-      <div class="row" style="margin-top:16%;">
-        <div class="col-md-4 col-sx-4 col-sm-4">
 
-        </div>
-      <div class="col-md-4 col-sx-4 col-sm-4" style="text-align: center;vertical-align: middle;line-height: 90px;">
-        <h1><u>Josh Martin's Website</u></h1>
-		  <h2> Sorry, this website is currently under maintenance.</h2>
-      <h3>Please come back later.</h3>
-       <a href="/assets/Resume.pdf" target="_blank" style="font-size: 50px;"> Resume</a>
-       <div style="position: relative;left: 27%;margin-right: 50%;">
-           <a target="_blank" href="https://github.com/cjoshmartin"><img src="assets/images/icons/gihub_icon.svg" style="height: 9%;" alt="github icon"></a>
-       </div>
-     </div>
-   </div>
 				<div>
 					<!-- contact form include goes here  -->
+          {% include contactform.html %}
 				</div>
 </div>
 </body>
