@@ -1,9 +1,0 @@
-
-
-{% for post in site.categories.work %}
-<tr>
-  <td><a class="nav-group-item" href="{{post.url}}">{{post.title}}</td>
-  <td>{{post.meta}}</td>
-  <td>{{post.date | date: '%B %d, %Y'}}</td></a>
-</tr>
-{% endfor %}
