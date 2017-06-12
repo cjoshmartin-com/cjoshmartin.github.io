@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-import {Router,Route,IndexRoute } from "react-router";
-import createHistory from 'history/createBrowserHistory';
+import { Router, Route, IndexRoute, hashHistory } from "react-router";
+
 import App from '../views/App';
+import Main from '../views/Main';
+import About from "../views/About";
+import Projects from "../views/Projects";
+
 class AppRouter extends Component {
-history = createHistory(this.props)
+
   render(){
     return(
 
-      <Router history={this.history}>
-      <Route exact={true} path="/" component={App}></Route>
+      <Router history={hashHistory}>
+      <Route exact={true} path="/" component={App}>
+        <IndexRoute component={Main}></IndexRoute>
+      </Route>
+      <Route path="/about" component={About}></Route>
+      <Route path="/projects" component={Projects} ></Route>
     </Router>
     );
   }
