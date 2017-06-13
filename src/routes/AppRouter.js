@@ -1,26 +1,15 @@
 import React, { Component } from 'react';
-import { Router, Route, IndexRoute, hashHistory } from "react-router";
+import {Route, IndexRoute} from "react-router";
 
 import App from '../views/App';
 import Main from '../views/Main';
 import About from "../views/About";
 import Projects from "../views/Projects";
 
-class AppRouter extends Component {
-
-  render(){
-    return(
-
-      <Router history={hashHistory}>
+export default (
       <Route exact={true} path="/" component={App}>
-        <IndexRoute component={Main}></IndexRoute>
+        <IndexRoute component={Main}/>
+        <Route path="about" component={About}/>
+      <Route path="projects" component={Projects} />
       </Route>
-      <Route path="/about" component={About}></Route>
-      <Route path="/projects" component={Projects} ></Route>
-    </Router>
     );
-  }
-}
-
-
-export default AppRouter;
