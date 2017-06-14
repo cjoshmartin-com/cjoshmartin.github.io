@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
 import { Nav, NavItem } from 'react-bootstrap';
-import { IndexLink, Link } from "react-router";
+import {Link, IndexLink} from "react-router";
 import * as firebase from 'firebase';
 import Database from '../Database';
 

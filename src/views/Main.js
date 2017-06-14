@@ -50,7 +50,7 @@ var tomail =function (email) {
         <Col md={4}>
          <ButtonToolbar>
 
-         <Button><Link  to="about">About</Link></Button>
+         <Button><Link to="about">About</Link></Button>
 
          <OverlayTrigger placement="right" overlay={tooltip}>
 
