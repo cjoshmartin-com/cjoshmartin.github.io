@@ -6,7 +6,9 @@ class About extends Component{
 
       <div>
         <h1>This is the About page</h1>
-        <p>Nothing is here, yet</p>
+        <p><strong>I am Josh Martin, an undergaduate at Indaina University Purdue University Indainapolis studying Computer Engineering</strong> I love to make things. I spend most of my time teaching myself programing and dancing.</p>
+        <h1>Relevant Coursework</h1>
+        <p>Computing II,Spring 2017(CSCI 24000)</p>
       </div>
 
     );

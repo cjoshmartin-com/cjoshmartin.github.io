@@ -45,6 +45,8 @@ var tomail =function (email) {
         <Image src="https://avatars1.githubusercontent.com/u/8135112?v=3&s=460" thumbnail width="200" height="200"/>
         <p>{this.state.description}</p>
       <p>Contact me <span style={{fontSize: 20, fontWeight: 400}}>@</span> <a href={tomail(this.state.email)}>contact@cjoshmartin.com</a></p>
+      <h3>Interests</h3>
+      <p>Blockchain</p><p>Cryptography</p><p>Internet Security</p><p>Moblie development</p>
         <Row>
         <Col md={5} />
         <Col md={4}>
