@@ -6,7 +6,6 @@ import Main from '../views/Main';
 import About from "../views/About";
 import Projects from "../views/Projects";
 
-import * as firebase from 'firebase';
 import Database from '../Database';
 
 export default class AppRouter extends Component {

@@ -3,7 +3,6 @@ import logo from '../logo.png';
 import { Nav, NavItem } from 'react-bootstrap';
 import {Link, IndexLink} from "react-router";
 import * as firebase from 'firebase';
-import Database from '../Database';
 
 class Header extends Component {
   constructor(prop){
@@ -17,7 +16,7 @@ class Header extends Component {
     const rootRef= firebase.database().ref();
     rootRef.on('value',snapshot =>{
       var data =snapshot.child("/").val();
-      console.log(JSON.stringify(data,null,' '));
+      //console.log(JSON.stringify(data,null,' '));
       this.setState({
         name : data.name,
       })

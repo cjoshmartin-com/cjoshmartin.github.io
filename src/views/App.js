@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import '../App.css';
 import Header from "../component/Header"
-import icon from "../component/icon"
 import Main from "./Main"
 class App extends Component {
-  constructor(prop){
+ /* constructor(prop){
       super(prop);
-  }
+  } */
   render() {
     return (
       <div className="App">

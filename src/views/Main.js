@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
-import Database from '../Database';
 
 import { Button,ButtonToolbar,OverlayTrigger,Tooltip,Image,Col,Row } from 'react-bootstrap';
 
@@ -20,7 +19,7 @@ class Main extends Component {
     const rootRef= firebase.database().ref();
     rootRef.on('value',snapshot =>{
       var data =snapshot.child("/").val();
-      console.log(JSON.stringify(data,null,' '));
+      //console.log(JSON.stringify(data,null,' '));
       this.setState({
         name : data.name,
         description: data.description,
