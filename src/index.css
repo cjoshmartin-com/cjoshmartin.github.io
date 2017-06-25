@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin-bottom:50px;
   padding: 0;
   font-family: sans-serif;
 }
@@ -7,4 +7,55 @@ body {
 a.ui.card {
     min-height: 300px;
     margin-top: 10px !important;
+}
+div.projectGrid:last-child {
+  margin-bottom: 100px !important;
+}
+
+p.interests{
+  padding: 0;
+  margin: 0 0 2px 0;
+}
+
+span.interests{
+  color: green;
+  margin-right: 5px;
+}
+h3.footerText, p.footerText {
+    margin: 0;
+    padding: 0;
+}
+
+.varText{
+  margin-right: 5px;
+  color: DARKVIOLET;
+  font-weight: 600;
+}
+.varName{
+  color: FIREBRICK;
+  font-weight: 500;
+  margin-right: 5px;
+}
+.errorText{
+  background-color: red;
+  color: wheat;
+}
+.footer {
+  position:fixed;
+    height:100px;
+    background-color:#fff;
+    z-index: 100000;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+
+}
+#dateupdated{
+  margin-bottom: 3px !important;
+}
+
+div.indexPage{
+  min-height: 600px;
+  /*margin-bottom: 300px !important;*/
 }

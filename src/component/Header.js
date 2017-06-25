@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../logo.png';
 import { Nav, NavItem } from 'react-bootstrap';
+import { Grid} from 'semantic-ui-react'
 import {Link, IndexLink} from "react-router";
 import * as firebase from 'firebase';
 
@@ -28,12 +29,13 @@ render(){
       <img src={logo} className="App-logo" alt="logo" />
       <div>
         <h1> Hello world, I am {this.state.name}!</h1>
+        <Grid centered columns={2}>
       <Nav bsStyle="pills" >
-        <NavItem href="/"><IndexLink  to="/">Home</IndexLink></NavItem>
-        <NavItem href="about"><Link  to="about">About</Link></NavItem>
-        <NavItem href="projects"><Link  to="projects">Projects</Link></NavItem>
+        <NavItem href="/">Home</NavItem>
+        <NavItem href="about">About</NavItem>
+        <NavItem href="projects">Projects</NavItem>
       </Nav>
-
+    </Grid>
     </div>
     </div>
   );

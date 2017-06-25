@@ -4,7 +4,7 @@ import {Grid,Col,Row } from 'react-bootstrap';
 import { Card, Icon, Image } from 'semantic-ui-react'
 import _ from 'lodash';
 
-
+import * as firebase from 'firebase';
 import axios from "axios";
 
 class Projects extends Component{
@@ -18,7 +18,7 @@ class Projects extends Component{
     let codepen;
     await axios.get(`https://cpv2api.com/pens/showcase/cjoshmartin/`) // codepen data
      .then(res => {
-       console.log(res.data.data);
+      //  console.log(res.data.data);
       codepen =res.data.data.map((list,index)=>{
         return{
           title: _.startCase(list.title),
@@ -39,7 +39,7 @@ class Projects extends Component{
      let gitreposFiltered;
      let ranorder =Math.floor((Math.random() * 10) + 1);
       var octacat =["https://firebasestorage.googleapis.com/v0/b/cjoshmartin-f652e.appspot.com/o/github_projects.jpg?alt=media&token=1daa00d7-42c3-4d09-aedb-eb2eb62e7ca3","https://firebasestorage.googleapis.com/v0/b/cjoshmartin-f652e.appspot.com/o/octcat-with-glass-joshes-website.jpg?alt=media&token=3da43ec0-29e8-4ba6-8742-d7529cf81575","https://firebasestorage.googleapis.com/v0/b/cjoshmartin-f652e.appspot.com/o/classy-octcat-Joshes-website.jpeg?alt=media&token=ba89f23c-f51d-4366-94c0-08d7f9393d47"]
-     await axios.get(`https://api.github.com/users/cjoshmartin/subscriptions`).then(res=>{  // github repos data
+     await axios.get(`https://api.github.com/users/cjoshmartin/repos`).then(res=>{  // github repos data
        gitrepos = res.data.map((list,index)=>{
          // TODO: do I want to tell what lanage was used?
          if(!list.fork){
@@ -57,17 +57,26 @@ class Projects extends Component{
            }
          }
        })
+
         gitreposFiltered= gitrepos.filter(obj =>{
          return obj !== undefined
        })
      });
+     let personaldb =[];
+     const dbRef= await firebase.database().ref();
+     await dbRef.on('value',snapshot=>{
+       personaldb= snapshot.child("/projects").val();
+     // console.log(JSON.stringify(data[0],null,' '));
 
-    var merged = _.concat(codepen, gitreposFiltered);
+     //console.log(JSON.stringify(this.state.obj,null,' '));
+   })
+
+    var merged = _.concat(codepen, gitreposFiltered,personaldb);
     var pushed=[];
     for(var i=0;i<merged.length;i++){
       pushed[i]=merged[i * ranorder % merged.length]
     }
-    console.log(pushed);
+    // console.log(pushed);
     this.setState({ projectList:pushed });
   }
 
@@ -76,8 +85,8 @@ class Projects extends Component{
     const projectList = this.state.projectList.map((list,index)=>{
       // console.log(list)
       return(
-        <Col xs={6} md={4} key={index}  color='grey'>
-          <Card href={list.link} target="_blank">
+        <Col xs={12} sm={8} md={4} key={index} className="projectGrid">
+          <Card href={list.link} target="_blank" color='grey'>
             <Image src={list.images.small} alt={list.title} fluid/>
             <Card.Content>
               <Card.Header>
@@ -97,6 +106,22 @@ class Projects extends Component{
     });
     return(
       <div>
+        <Row>
+          <Col md={12} sm={8} xsOffset={2} >
+        <h1>
+          Projects
+        </h1>
+        <p>
+          I am not the greatest at updating things, however I am way better at creating things!</p><p> So, I have implemented Github's and Codepen's API for when ever I create new projects, it will be added here automatically!
+        </p>
+        <p>
+          (However, some of my work from github will not show up here, such as the projects I have contributed to. Please check out my github to see more. )
+        </p>
+        {/* <a href="https://www.github.com/cjoshmartin" target="_blank">
+        <Icon name='github' size='massive' color='black' link/>
+        </a> */}
+      </Col>
+      </Row>
         <Grid>
         <Row>
           {projectList}

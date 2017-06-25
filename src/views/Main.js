@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
-
-import { Button,ButtonToolbar,OverlayTrigger,Tooltip,Image,Col,Row } from 'react-bootstrap';
-
-import {Link} from "react-router";
+import {Grid,Row,Col} from 'react-bootstrap';
 
 class Main extends Component {
   constructor(prop){
@@ -11,66 +8,69 @@ class Main extends Component {
       this.state ={
           name: "",
           description: "",
-          resume: ""
+          resumelink: "",
+          resumedate: "",
+          email: "",
+          job : "",
+          interests: []
       }
   }
 
-  componentDidMount(){
+async  componentDidMount(){
     const rootRef= firebase.database().ref();
-    rootRef.on('value',snapshot =>{
+      rootRef.on('value',snapshot =>{
       var data =snapshot.child("/").val();
-      //console.log(JSON.stringify(data,null,' '));
+      // console.log(JSON.stringify(data.interests,null,' '));
       this.setState({
         name : data.name,
         description: data.description,
-        resumelink: data.resume.link,
-        resumedate: data.resume.date,
-        email: data.email
+        email: data.email,
+        job: data.job,
+        interests: data.interests
       })
     });
 
   }
 render(){
 
-  const tooltip = (
-  <Tooltip id="tooltip">Last Updated: {this.state.resumedate}</Tooltip>
-);
-var tomail =function (email) {
-  return "mailto:"+email;
-}
+  // console.log(this.state.interests);
+  var interestsList = this.state.interests.map((list,index)=>{
+    return(
+    <span key={index} className="interests">
+      "{list}"{(index < this.state.interests.length -1) ? <span style={{color:"black"}}>,</span>:""}
+    </span>
+    );
+  });
 
   return(
-    <p className="App-intro">
-        <Image src="https://avatars1.githubusercontent.com/u/8135112?v=3&s=460" thumbnail width="200" height="200"/>
-        <p>{this.state.description}</p>
-      <p>Contact me <span style={{fontSize: 20, fontWeight: 400}}>@</span> <a href={tomail(this.state.email)}>contact@cjoshmartin.com</a></p>
-      <h3>Interests</h3>
-      <p>Blockchain</p><p>Cryptography</p><p>Internet Security</p><p>Moblie development</p>
+    <div className="App-intro indexPage">
+      <Grid>
         <Row>
-        <Col md={5} />
-        <Col md={4}>
-         <ButtonToolbar>
-
-         <Button><Link to="about">About</Link></Button>
-
-         <OverlayTrigger placement="right" overlay={tooltip}>
-
-          <Button bsStyle="info" href={this.state.resumelink} target="_blank">Resume</Button>
-
-            </OverlayTrigger>
-        </ButtonToolbar>
+          <Col xs={12} sm={12} md={12}>
+      <div>
+        <span className="varText">var </span> <span className="varName">introduction</span> = [<span className="interests">{this.state.description}</span>]
+      </div>
+      <div>
+        <span className="varText">var </span> <span className="varName">job</span> = [<span className="interests">is_hired:</span>{(this.state.job.is_hired =="False") ? <span className="errorText">False</span>:<span className="varName">True</span>} ,<span className="interests">current_job:</span><span className="varName">"{this.state.job.current_job}"</span>]
+      </div>
+      <div>
+        <span className="varText">var </span> <span className="varName">interest</span> = [{interestsList}]
+      </div>
+      <div style={{textAlign:"center"}}>
+        <br />
+        <a href="/about"><span className="varName">Class</span> learnMore(<span className="varName">User newUser</span>)<span style={{color:"black"}}>;</span></a>
+      </div>
       </Col>
-      <Col md={3}/>
-    </Row>
-    </p>
+      </Row>
+      </Grid>
+
+    </div>
   );
 }
 }
 
+// Class LearnMore(User newUser)
+
 export default Main;
 
-/*
-
-      <Button bsStyle="default">Holy guacamole!</Button>
-
-    */
+// console.error("is_hired is equal to False. Please help fix this error")
