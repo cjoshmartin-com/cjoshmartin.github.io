@@ -59,3 +59,8 @@ div.indexPage{
   min-height: 600px;
   /*margin-bottom: 300px !important;*/
 }
+
+div.jsonText{
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
