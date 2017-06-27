@@ -53,7 +53,7 @@ class Footer extends Component{
         </h3>
         <a href={tomail(this.state.email)}>{this.state.email}</a>
       </Grid.Column>
-        <Grid.Column width={4}/>
+        <Grid.Column width={6}/>
         <Grid.Column width={4}>
         <a href="https://www.github.com/cjoshmartin" target="_blank">
         <Icon name='github'  size='large' color='black' link/>
