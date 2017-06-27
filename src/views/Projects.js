@@ -16,25 +16,25 @@ class Projects extends Component{
   }
   async componentDidMount(){
     let codepen;
-    await axios.get(`https://cpv2api.com/pens/showcase/cjoshmartin/`) // codepen data
-     .then(res => {
-      //  console.log(res.data.data);
-      codepen =res.data.data.map((list,index)=>{
-        return{
-          title: _.startCase(list.title),
-          images: {
-            small:list.images.small
-          },
-          details: _.capitalize(list.details),
-          link: list.link,
-          icon:{
-            name: "Codepen",
-            icon: "codepen"
-          }
-        }
-      })
-      //  console.log(this.state.projectList)
-     });
+    // await axios.get(`https://cpv2api.com/pens/showcase/cjoshmartin/`) // codepen data
+    //  .then(res => {
+    //   //  console.log(res.data.data);
+    //   codepen =res.data.data.map((list,index)=>{
+    //     return{
+    //       title: _.startCase(list.title),
+    //       images: {
+    //         small:list.images.small
+    //       },
+    //       details: _.capitalize(list.details),
+    //       link: list.link,
+    //       icon:{
+    //         name: "Codepen",
+    //         icon: "codepen"
+    //       }
+    //     }
+    //   })
+    //   //  console.log(this.state.projectList)
+    //  });
      let gitrepos;
      let gitreposFiltered;
      let ranorder =Math.floor((Math.random() * 10) + 1);
@@ -71,7 +71,7 @@ class Projects extends Component{
      //console.log(JSON.stringify(this.state.obj,null,' '));
    })
 
-    var merged = _.concat(codepen, gitreposFiltered,personaldb);
+    var merged = _.concat(gitreposFiltered,personaldb);
     var pushed=[];
     for(var i=0;i<merged.length;i++){
       pushed[i]=merged[i * ranorder % merged.length]
