@@ -27,10 +27,7 @@ class Footer extends Component{
        })
         axios.get(`https://api.github.com/repos/cjoshmartin/cjoshmartin.github.io`)
         .then(res => {
-             var currentDate =res.data.pushed_at;
-             var temp =currentDate.split('T');
-             currentDate =temp[0];
-            this.setState({updated:moment(currentDate, "YYYY-MM-DD").fromNow()})
+            this.setState({updated:moment(res.data.pushed_at, "YYYY-MM-DDThh:mm:ssZ").fromNow()}) // check when the this repo was last pushed and formats date
         })
      }
   render(){
@@ -64,7 +61,7 @@ class Footer extends Component{
         {/* <OverlayTrigger placement="right" overlay={tooltip}> */}
           <Button href={this.state.resumelink} target="_blank" basic color='grey'>Resume</Button><br />
           {/* </OverlayTrigger> */}
-          <p id="#dateupdated">Last updated {this.state.updated}.</p>
+          <p id="#dateupdated">Last updated, {this.state.updated}.</p>
       </Grid.Column>
       </Grid.Row>
       </Grid>
