@@ -63,7 +63,7 @@ render(){
       <div style={{textAlign:"center"}} className="jsonText">
         <br />
           <Grids centered columns={2}>  {/* this is a hack */}
-        <Nav bsStyle="pills"><NavItem href="about"><span className="varName">Class</span> learnMore(<span className="varName">User newUser</span>)<span style={{color:"black"}}>;</span></NavItem></Nav>
+        <Nav bsStyle="pills"><NavItem href="#/about"><span className="varName">Class</span> learnMore(<span className="varName">User newUser</span>)<span style={{color:"black"}}>;</span></NavItem></Nav>
       </Grids>
       </div>
       </Col>
