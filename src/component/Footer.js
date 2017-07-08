@@ -67,7 +67,7 @@ class Footer extends Component{
           {/* </OverlayTrigger> */}
           <Media query="(max-width:700px)">
           {matches => matches ? (<p></p>): (<p id="#dateupdate">Last updated, {this.state.updated}.</p>)}
-       </Media> 
+       </Media>
       </Grid.Column>
       </Grid.Row>
       </Grid>
