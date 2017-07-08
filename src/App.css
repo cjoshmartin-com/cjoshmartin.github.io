@@ -23,13 +23,19 @@
   font-size: large;
   position: relative;
 }
+@media only screen and (max-width:600px){
+  p#dataupated{
+   display: none !important;
+  }
+}
 
 @keyframes App-logo-spin {
   0% { transform: rotate(-10deg); }
   50% { transform: rotate(12deg); }
   100% {transform: rotate(-10deg);}
 }
-@@keyframes fade-in {
+
+@keyframes fade-in {
   0%{opacity:0}
   100% {opacity: 1}
 }

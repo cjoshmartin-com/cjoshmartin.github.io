@@ -7,6 +7,9 @@ import {OverlayTrigger,Tooltip} from 'react-bootstrap';
 import axios from "axios";
 import moment from "moment";
 import _ from 'lodash';
+import Media from "react-media"
+
+
 
 class Footer extends Component{
     constructor(prop){
@@ -31,6 +34,7 @@ class Footer extends Component{
         })
      }
   render(){
+
     var currentYear = (new Date()).getFullYear();
     var tomail =function (email) {
       return "mailto:"+email;
@@ -43,15 +47,15 @@ class Footer extends Component{
         <Divider />
         <Grid>
           <Grid.Row>
-            <Grid.Column width={2}/>
-        <Grid.Column width={4}>
+            <Grid.Column computer={2} mobile={2}/>
+        <Grid.Column computer={4} moblie={4}>
         <h3 className="footerText">
           Josh Martin
         </h3>
         <a href={tomail(this.state.email)}>{this.state.email}</a>
       </Grid.Column>
-        <Grid.Column width={6}/>
-        <Grid.Column width={4}>
+        <Grid.Column computer={6} mobile={4}/>
+        <Grid.Column computer={4} mobile={4}>
         <a href="https://www.github.com/cjoshmartin" target="_blank">
         <Icon name='github'  size='large' color='black' link/>
         </a>
@@ -61,7 +65,9 @@ class Footer extends Component{
         {/* <OverlayTrigger placement="right" overlay={tooltip}> */}
           <Button href={this.state.resumelink} target="_blank" basic color='grey'>Resume</Button><br />
           {/* </OverlayTrigger> */}
-          <p id="#dateupdated">Last updated, {this.state.updated}.</p>
+          <Media query="(max-width:700px)">
+          {matches => matches ? (<p></p>): (<p id="#dateupdate">Last updated, {this.state.updated}.</p>)}
+       </Media> 
       </Grid.Column>
       </Grid.Row>
       </Grid>

@@ -53,8 +53,14 @@ h3.footerText, p.footerText {
 }
 #dateupdated{
   margin-bottom: 3px !important;
+
 }
 
+@media only screen and (max-width:600px){
+  p#dataupated{
+   display: none !important;
+  }
+}
 div.indexPage{
   min-height: 600px;
   /*margin-bottom: 300px !important;*/

@@ -107,7 +107,7 @@ class Projects extends Component{
     return(
       <div>
         <Row>
-          <Col md={12} sm={8} xsOffset={2} >
+          <Col md={10} sm={10} lg={10} xsOffset={1} smOffset={1} mdOffset={1} lgOffset={2} >
         <h1>
           Projects
         </h1>
