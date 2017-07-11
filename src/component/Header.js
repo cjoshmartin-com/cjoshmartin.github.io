@@ -31,9 +31,10 @@ render(){
         <h1> Hello world, I am {this.state.name}!</h1>
         <Grid centered columns={2}>
       <Nav bsStyle="pills" >
-        <NavItem href="/#">Home</NavItem>
-        <NavItem href="#/about">About</NavItem>
-        <NavItem href="#/projects">Projects</NavItem>
+        <NavItem href="https://www.cjoshmartin.com/#">Home</NavItem>
+        <NavItem href="https://www.cjoshmartin.com/#/about">About</NavItem>
+        <NavItem href="https://www.cjoshmartin.com/#/projects">Projects</NavItem>
+        <NavItem href="https://www.cjoshmartin.com/blog"> Blog</NavItem>
       </Nav>
     </Grid>
     </div>
