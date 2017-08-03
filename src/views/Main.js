@@ -55,11 +55,17 @@ render(){
         <span className="varText">const </span> <span className="varName">introduction</span> = "<span className="interests">{this.state.description}</span>"
       </div>
       <div className="jsonText">
-        <span className="varText">let </span> <span className="varName">job</span> = [<span className="interests">is_hired:</span>{(this.state.job.is_hired ==="False") ? <span className="errorText">False</span>:<span className="varName">True</span>} ,<span className="interests">current_job:</span><span className="varName">"{this.state.job.current_job}"</span>]
+        <span className="varText">let </span> <span className="varName">job</span> = [<span className="interests">is_hired:</span>{(this.state.job.is_hired ==="False") ? <span className="errorText">False</span>:<span className="varName">True</span>}, <span className="interests">current_job:</span><span className="varName">"{this.state.job.current_job}"</span>]
       </div>
       <div className="jsonText">
         <span className="varText">let </span> <span className="varName">interest</span> = [{interestsList}]
       </div>
+      <br />
+      <Grids centered columns={4}>
+      <a href="https://www.github.com/cjoshmartin">
+      <img src="http://ghchart.rshah.org/cjoshmartin" alt="cjoshmartin's Github chart" />
+      </a>
+      </Grids>
       <div style={{textAlign:"center"}} className="jsonText">
         <br />
           <Grids centered columns={2}>  {/* this is a hack */}

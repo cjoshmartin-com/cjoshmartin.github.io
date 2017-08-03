@@ -5,6 +5,7 @@ import App from '../views/App';
 import Main from '../views/Main';
 import About from "../views/About";
 import Projects from "../views/Projects";
+import Blog from '../views/Blog';
 
 import Database from '../Database';
 
@@ -25,6 +26,7 @@ export default class AppRouter extends Component {
          <IndexRoute component={Main}/>
          <Route path="/about" component={About}/>
          <Route path="/projects" component={Projects} />
+         <Route path="/blog" component={Blog} />
        </Route>
         </Router>
     );
