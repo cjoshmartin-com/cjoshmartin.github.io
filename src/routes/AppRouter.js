@@ -13,11 +13,6 @@ export default class AppRouter extends Component {
   constructor(prop){
       super(prop);
       Database.init();
-      this.state ={
-          name: "",
-          description: "",
-          resume: ""
-      }
   }
     render(){
       return(
