@@ -18,12 +18,7 @@ async componentDidMount(){
     const dbRef= await firebase.database().ref();
     dbRef.on('value',snapshot=>{
    var data = snapshot.child("/").val();
-    // console.log(JSON.stringify(data[0],null,' '));
-    this.setState({classlist:data.classes});
-    this.setState({img:data.picture})
-    console.log(data.certifications);
-    this.setState({certifications: data.certifications})
-    //console.log(JSON.stringify(this.state.obj,null,' '));
+    this.setState({classlist:data.classes,img:data.picture,certifications: data.certifications})
   })
   }
   render(){

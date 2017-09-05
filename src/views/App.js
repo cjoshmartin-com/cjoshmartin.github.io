@@ -34,7 +34,7 @@ class App extends Component {
       <div className="App" >
         <Header  name={this.state.data.name} />
         <Switch>
-         <Route exact={true} path="/" component={Main}/> {/* change component to render and then pass data to it  */}
+         <Route exact={true} path="/" render={ ()=>( <Main {...this.state.data} /> ) }/> 
          <Route path="/about" component={About}/>
          <Route path="/projects" component={Projects} />
          <Route path="/blog" component={Blog} />

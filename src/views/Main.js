@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as firebase from 'firebase';
 import {Grid,Row,Col} from 'react-bootstrap';
 import {NavItem,Nav } from 'react-bootstrap';
 
@@ -16,14 +15,13 @@ class Main extends Component {
           resumedate: "",
           email: "",
           job : "",
-          interests: []
+          interests: [],
       }
   }
 
-async  componentDidMount(){
-    const rootRef= firebase.database().ref();
-      rootRef.on('value',snapshot =>{
-      var data =snapshot.child("/").val();
+  componentWillReceiveProps = (NextProps) => {
+
+      const data = NextProps;
       this.setState({
         name : data.name,
         description: data.description,
@@ -31,7 +29,6 @@ async  componentDidMount(){
         job: data.job,
         interests: data.interests
       })
-    });
 
   }
 render(){
