@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as firebase from 'firebase';
+
 import { Button,Divider,Icon, Grid} from 'semantic-ui-react';
 
 import axios from "axios";
@@ -11,20 +11,12 @@ import Media from "react-media"
 class Footer extends Component{
     constructor(prop){
         super(prop);
+        
         this.state ={
-         email: "",
-         resumelink: "",
          updated: "",
-         resumedate: ""
        }
      }
       componentDidMount(){
-       const rootRef= firebase.database().ref();
-         rootRef.on('value',snapshot =>{
-         var data =snapshot.child("/").val();
-         this.setState({email:data.email, resumelink: data.resume.link, resumedate: data.resume.date})
-
-       })
         axios.get(`https://api.github.com/repos/cjoshmartin/cjoshmartin.github.io`)
         .then(res => {
             this.setState({updated:moment(res.data.pushed_at, "YYYY-MM-DDThh:mm:ssZ").fromNow()}) // check when the this repo was last pushed and formats date
@@ -35,6 +27,7 @@ class Footer extends Component{
     var tomail =function (email) {
       return "mailto:"+email;
     }
+      var data = this.props;
     return(
       <div className="footer">
         <Divider />
@@ -45,7 +38,7 @@ class Footer extends Component{
         <h3 className="footerText">
           Josh Martin
         </h3>
-        <a href={tomail(this.state.email)}>{this.state.email}</a>
+        <a href={tomail(data.email)}>{data.email}</a>
       </Grid.Column>
         <Grid.Column computer={6} mobile={4}/>
         <Grid.Column computer={4} mobile={4}>
@@ -55,7 +48,7 @@ class Footer extends Component{
         <a href="https://www.linkedin.com/in/joshua-martin-55740652/" target="_blank">
           <Icon name="linkedin square"  size='large' color='black' link/>
         </a>
-          <Button href={this.state.resumelink} target="_blank" basic color='grey'>Resume</Button><br />
+          <Button href={data.resumelink} target="_blank" basic color='grey'>Resume</Button><br />
           <Media query="(max-width:700px)">
           {matches => matches ? (<p></p>): (<p id="#dateupdate">Last updated, {this.state.updated}.</p>)}
        </Media>

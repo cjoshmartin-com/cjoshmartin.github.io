@@ -24,7 +24,6 @@ async  componentDidMount(){
     const rootRef= firebase.database().ref();
       rootRef.on('value',snapshot =>{
       var data =snapshot.child("/").val();
-       console.log(JSON.stringify(data.interests,null,' '));
       this.setState({
         name : data.name,
         description: data.description,
@@ -81,8 +80,5 @@ render(){
 }
 }
 
-// Class LearnMore(User newUser)
-
 export default Main;
 
-// console.error("is_hired is equal to False. Please help fix this error")
