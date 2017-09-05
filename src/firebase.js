@@ -1,8 +1,8 @@
 // Database
+
 import * as firebase from 'firebase';
-class Database{
-  static init(){
-    firebase.initializeApp({
+
+    const app = firebase.initializeApp({
       apiKey: "AIzaSyBDkYL7SPL_rERsHW6cvVP6WwdE352iujY",
       authDomain: "cjoshmartin-f652e.firebaseapp.com",
       databaseURL: "https://cjoshmartin-f652e.firebaseio.com",
@@ -10,7 +10,6 @@ class Database{
       storageBucket: "cjoshmartin-f652e.appspot.com",
       messagingSenderId: "277001799380"
       });
-  }
-}
 
-export default Database;
+export default app;
+export const db = firebase.database().ref()

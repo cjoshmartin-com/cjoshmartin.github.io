@@ -1,5 +1,5 @@
 {
-  "name": "testing",
+  "name": "Website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,7 +13,7 @@
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
     "react-media": "^1.5.1",
-    "react-router": "3.0.5",
+    "react-router-dom": "^4.2.2",
     "semantic-ui": "^2.2.10",
     "semantic-ui-css": "^2.2.10",
     "semantic-ui-react": "^0.69.0"

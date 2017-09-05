@@ -4,7 +4,13 @@ import registerServiceWorker from './registerServiceWorker';
 import 'semantic-ui-css/semantic.min.css';
 import './index.css';
 
-import AppRouter from "./routes/AppRouter"
+import { HashRouter as Router, Route } from 'react-router-dom'
+import App from './views/App.js'
 
-ReactDOM.render(<AppRouter />, document.getElementById('root'));
+
+ReactDOM.render(
+    <Router>
+        <Route component={App} />
+    </Router> ,document.getElementById('root')
+);
 registerServiceWorker();
