@@ -42,10 +42,10 @@ class Footer extends Component{
       </Grid.Column>
         <Grid.Column computer={6} mobile={4}/>
         <Grid.Column computer={4} mobile={4}>
-        <a href="https://www.github.com/cjoshmartin" target="_blank">
+        <a href="https://www.github.com/cjoshmartin" target="_blank" rel="noopener noreferrer">
         <Icon name='github'  size='large' color='black' link/>
         </a>
-        <a href="https://www.linkedin.com/in/joshua-martin-55740652/" target="_blank">
+        <a href="https://www.linkedin.com/in/joshua-martin-55740652/" target="_blank" rel="noopener noreferrer">
           <Icon name="linkedin square"  size='large' color='black' link/>
         </a>
           <Button href={data.resumelink} target="_blank" basic color='grey'>Resume</Button><br />

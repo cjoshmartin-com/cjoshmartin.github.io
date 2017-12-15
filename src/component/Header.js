@@ -12,8 +12,8 @@ render(){
         <h1> Hello world, I am {this.props.name}!</h1>
         <Grid centered columns={2}>
       <Nav bsStyle="pills" >
-        {/* <NavItem href="/">Home</NavItem> */}
-        {/* <NavItem href="#/about">About</NavItem> */}
+        <NavItem href="/">Home</NavItem>
+        <NavItem href="#/about">About</NavItem>
         <NavItem href="#/projects"> Projects</NavItem>
       </Nav>
     </Grid>

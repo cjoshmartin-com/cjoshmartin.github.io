@@ -6,7 +6,7 @@ import Footer from "../component/Footer"
 import Main from './Main';
 import About from "./About";
 import Projects from "./Projects";
-import Blog from './Blog';
+// import Blog from './Blog';
 
 import { db } from '../firebase'
 
@@ -36,8 +36,8 @@ class App extends Component {
         <Switch>
          <Route exact={true} path="/" render={ ()=>( <Main {...this.state.data} /> ) }/> 
          <Route path="/about" render={()=> (<About {...this.state.data}/>)}/>
-         <Route path="/projects" component={Projects} />
-         <Route path="/blog" component={Blog} />
+         <Route path="/projects" render={()=>(<Projects />)}/>
+         {/* <Route path="/blog" component={Blog} /> */}
         </Switch>
         {/* console.log(this.state.data) */}
         <Footer {...this.state.data}/>

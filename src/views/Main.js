@@ -8,6 +8,9 @@ import { Grid as Grids} from 'semantic-ui-react'
 class Main extends Component {
   constructor(prop){
       super(prop);
+      
+      console.log(prop);
+
       this.state ={
           name: "",
           description: "",
@@ -29,19 +32,18 @@ class Main extends Component {
         job: data.job,
         interests: data.interests
       })
-
   }
-render(){
 
+render(){
+  let interestsList;  
   // console.log(this.state.interests);
-  var interestsList = this.state.interests.map((list,index)=>{
+   interestsList = this.state.interests.map((list,index)=>{
     return(
     <span key={index} className="interests">
       "{list}"{(index < this.state.interests.length -1) ? <span style={{color:"black"}}>,</span>:""}
     </span>
     );
   });
-
   return(
     <div className="App-intro indexPage">
       <Grid>
