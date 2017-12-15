@@ -35,7 +35,7 @@ class App extends Component {
         <Header  name={this.state.data.name} />
         <Switch>
          <Route exact={true} path="/" render={ ()=>( <Main {...this.state.data} /> ) }/> 
-         <Route path="/about" component={About}/>
+         <Route path="/about" render={()=> (<About {...this.state.data}/>)}/>
          <Route path="/projects" component={Projects} />
          <Route path="/blog" component={Blog} />
         </Switch>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as firebase from 'firebase';
 import {Grid,Row,Col} from 'react-bootstrap';
 
 import Media from "react-media"
@@ -14,12 +13,17 @@ class About extends Component{
     }
   }
 
-async componentDidMount(){
-    const dbRef= await firebase.database().ref();
-    dbRef.on('value',snapshot=>{
-   var data = snapshot.child("/").val();
-    this.setState({classlist:data.classes,img:data.picture,certifications: data.certifications})
-  })
+componentWillReceiveProps = (NextProps) => {
+    const data = NextProps;
+    console.log(data)
+    this.setState(
+        {
+        classlist:data.classes,
+        img:data.picture,
+        certifications: data.certifications
+        }
+    )
+ 
   }
   render(){
     const classList = this.state.classlist.map((list, index) => {

@@ -34,7 +34,7 @@ class Footer extends Component{
         <Grid>
           <Grid.Row>
             <Grid.Column computer={2} mobile={2}/>
-        <Grid.Column computer={4} moblie={4}>
+        <Grid.Column computer={4} mobile={4}>
         <h3 className="footerText">
           Josh Martin
         </h3>

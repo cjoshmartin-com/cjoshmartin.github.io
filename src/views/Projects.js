@@ -18,7 +18,6 @@ class Projects extends Component{
     let codepen;
     await axios.get(`https://cpv2api.com/pens/showcase/cjoshmartin/`) // codepen data
      .then(res => {
-      //  console.log(res.data.data);
       codepen =res.data.data.map((list,index)=>{
         return{
           title: _.startCase(list.title),
@@ -33,7 +32,6 @@ class Projects extends Component{
           }
         }
       })
-      //  console.log(this.state.projectList)
      });
      let gitrepos;
      let gitreposFiltered;
@@ -66,24 +64,18 @@ class Projects extends Component{
      const dbRef= await firebase.database().ref();
      await dbRef.on('value',snapshot=>{
        personaldb= snapshot.child("/projects").val();
-     // console.log(JSON.stringify(data[0],null,' '));
-
-     //console.log(JSON.stringify(this.state.obj,null,' '));
    })
 
     var merged = _.concat(codepen, gitreposFiltered,personaldb);
     var pushed=[];
-    for(var i=0;i<merged.length;i++){
+    for(var i=1;i<merged.length;i++){
       pushed[i]=merged[i * ranorder % merged.length]
     }
-    // console.log(pushed);
     this.setState({ projectList:pushed });
   }
 
   render(){
-    // console.log(this.state.projectList)
     const projectList = this.state.projectList.map((list,index)=>{
-      // console.log(list)
       return(
         <Col xs={12} sm={8} md={4} key={index} className="projectGrid">
           <Card href={list.link} target="_blank" color='grey'>
@@ -107,22 +99,22 @@ class Projects extends Component{
     return(
       <div>
         <Row>
-          <Col md={10} sm={10} lg={10} xsOffset={1} smOffset={1} mdOffset={1} lgOffset={2} >
-        <h1>
-          Projects
-        </h1>
-        <p>
+          <Col md={10} sm={10} lg={10} xsOffset={2} smOffset={2} mdOffset={1} lgOffset={2} >
+        {/* <p>
           I am not the greatest at updating things, however I am way better at creating things!</p><p> So, I have implemented Github's and Codepen's API for when ever I create new projects, it will be added here automatically!
         </p>
         <p>
           (However, some of my work from github will not show up here, such as the projects I have contributed to. Please check out my github to see more. )
-        </p>
+        </p> */}
         {/* <a href="https://www.github.com/cjoshmartin" target="_blank">
         <Icon name='github' size='massive' color='black' link/>
         </a> */}
       </Col>
       </Row>
         <Grid>
+        <h1>
+          Projects
+        </h1>
         <Row>
           {projectList}
           </Row>
@@ -134,21 +126,3 @@ class Projects extends Component{
 }
 export default Projects;
 
-
-/* <Card.Content extra>
-  <a>
-    <Icon name='user' />
-    22 Friends
-  </a>
-</Card.Content> */
-
-/*
-<Thumbnail  >
-  <h3></h3>
-  <p>{list.views} views</p>
-   <div dangerouslySetInnerHTML={ {__html: list.details} } />
-  <p>
-    <Button bsStyle="primary" href={list.link} target="_blank">Click to View</Button>&nbsp;
-  </p>
-</Thumbnail>
-*/
