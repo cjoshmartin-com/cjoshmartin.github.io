@@ -112,9 +112,8 @@ class Projects extends Component{
         <Grid>
         {(this.state.isloaded) ?<h1>Projects</h1> : <h1/> }
 
-        <Card.Group itemsPerRow={2} >
-          {(this.state.isloaded) ? projectList : <Col className="projectGrid" ><Loader active inline="centered" size="medium"> Digging through my File Cabinet! 🗃 </Loader> </Col>}
-          </Card.Group>
+        
+          {(this.state.isloaded) ? <Card.Group itemsPerRow={2} > {projectList} </Card.Group> : <Col className="projectGrid" ><Loader active inline="centered" size="medium"> Digging through my File Cabinet! 🗃 </Loader> </Col>}
     </Grid>
       </div>
 
