@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {Grid,Col,Row } from 'react-bootstrap';
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon, Image, Loader, Segment, Dimmer } from 'semantic-ui-react'
 import _ from 'lodash';
 
 import * as firebase from 'firebase';
@@ -12,13 +12,14 @@ class Projects extends Component{
     super(props);
     this.state = {
       projectList: [],
+      isloaded: false,
     }
   }
   async componentDidMount(){
 
     let codepen;
 
-    await axios.get(`https://cpv2api.com/pens/showcase/cjoshmartin/`) // codepen data
+    await axios.get(`http://cpv2api.com/pens/showcase/cjoshmartin/`) // codepen data
      .then(res => {
       codepen =res.data.data.map((list,index)=>{
         return{
@@ -77,7 +78,7 @@ class Projects extends Component{
     for(var i=1;i<merged.length;i++){
       pushed[i]=merged[i * ranorder % merged.length]
     }
-    this.setState({ projectList:pushed });
+    this.setState({ projectList:pushed, isloaded: true });
   }
 
   render(){
@@ -109,16 +110,15 @@ class Projects extends Component{
       </Col>
       </Row>
         <Grid>
-        <h1>
-          Projects
-        </h1>
+        {(this.state.isloaded) ?<h1>Projects</h1> : <h1/> }
+
         <Row>
-          {projectList}
+          {(this.state.isloaded) ? projectList : <Loader active> Digging through my File Cabinet! 🗃 </Loader> }
           </Row>
     </Grid>
       </div>
 
-    );
+    ); 
   }
 }
 export default Projects;
