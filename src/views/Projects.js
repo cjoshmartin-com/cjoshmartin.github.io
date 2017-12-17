@@ -15,7 +15,7 @@ class Projects extends Component{
       isloaded: false,
     }
   }
-  async componentDidMount(){
+  async componentWillMount(){
 
     let codepen;
 
@@ -84,7 +84,7 @@ class Projects extends Component{
   render(){
     const projectList = this.state.projectList.map((list,index)=>{
       return(
-        <Col xs={12} sm={8} md={4} key={index} className="projectGrid">
+        // <Col xs={12} sm={8} md={4} key={index} className="projectGrid">
           <Card href={list.link} target="_blank" color='grey'>
             <Image src={list.images.small} alt={list.title} fluid/>
             <Card.Content>
@@ -100,7 +100,7 @@ class Projects extends Component{
               </a>
             </Card.Content>
           </Card>
-        </Col>
+        // </Col>
       );
     });
     return(
@@ -112,9 +112,9 @@ class Projects extends Component{
         <Grid>
         {(this.state.isloaded) ?<h1>Projects</h1> : <h1/> }
 
-        <Row>
-          {(this.state.isloaded) ? projectList : <Loader active> Digging through my File Cabinet! 🗃 </Loader> }
-          </Row>
+        <Card.Group itemsPerRow={2} >
+          {(this.state.isloaded) ? projectList : <Col className="projectGrid" ><Loader active inline="centered" size="medium"> Digging through my File Cabinet! 🗃 </Loader> </Col>}
+          </Card.Group>
     </Grid>
       </div>
 
