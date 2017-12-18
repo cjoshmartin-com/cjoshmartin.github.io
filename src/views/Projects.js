@@ -85,7 +85,7 @@ class Projects extends Component{
     const projectList = this.state.projectList.map((list,index)=>{
       return(
         // <Col xs={12} sm={8} md={4} key={index} className="projectGrid">
-          <Card href={list.link} target="_blank" color='grey'>
+          <Card key={index} href={list.link} target="_blank" color='grey'>
             <Image src={list.images.small} alt={list.title} fluid/>
             <Card.Content>
               <Card.Header>

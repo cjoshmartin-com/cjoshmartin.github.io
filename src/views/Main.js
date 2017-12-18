@@ -6,7 +6,7 @@ import { Grid as Grids } from 'semantic-ui-react'
 
 import Media from "react-media"
 
-class Main extends Component {
+export default class Main extends Component {
   render() {
     let interestsList;
     const { job } = this.props;
@@ -34,8 +34,6 @@ class Main extends Component {
                 <span className="varText">let </span> <span className="varName">interest</span> = [{interestsList}]
       </div>
               <br />
-              {/* TODO: MEDIA  */}
-
               <Media query="(min-width:700px)">
                 <Grids centered columns={4}>
                   <a href="https://www.github.com/cjoshmartin">
@@ -58,5 +56,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
 
