@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {Grid,Col,Row } from 'react-bootstrap';
-import { Card, Icon, Image, Loader, Segment, Dimmer } from 'semantic-ui-react'
+import { Card, Icon, Image, Loader } from 'semantic-ui-react'
 import _ from 'lodash';
 
 import * as firebase from 'firebase';
@@ -110,7 +110,7 @@ class Projects extends Component{
       </Col>
       </Row>
         <Grid>
-        {(this.state.isloaded) ?<h1>Projects</h1> : <h1/> }
+        {(this.state.isloaded) ?<h1>Projects</h1> : "" }
 
         
           {(this.state.isloaded) ? <Card.Group itemsPerRow={2} > {projectList} </Card.Group> : <Col className="projectGrid" ><Loader active inline="centered" size="medium"> Digging through my File Cabinet! 🗃 </Loader> </Col>}

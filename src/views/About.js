@@ -4,35 +4,19 @@ import {Grid,Row,Col} from 'react-bootstrap';
 import Media from "react-media"
 
 class About extends Component{
-  constructor(props){
-  super(props);
-    this.state={
-      classlist: [],
-      img: "",
-      certifications: []
-    }
-  }
 
-componentWillReceiveProps = (NextProps) => {
-    const data = NextProps;
-    console.log(data)
-    this.setState(
-        {
-        classlist:data.classes,
-        img:data.picture,
-        certifications: data.certifications
-        }
-    )
- 
-  }
   render(){
-    const classList = this.state.classlist.map((list, index) => {
-      // console.log(list)
+    let classList;
+    let certificationList;
+    if(this.props.classes){
+  
+      classList = this.props.classes.map((list, index) => {
      return (
        <li key={index}>{list.name}, {list.semester} ({list.classnumber})</li>
      );
    });
-   const certificationList = this.state.certifications.map((list,i)=>{
+  
+   certificationList = this.props.certifications.map((list,i)=>{
      return (
        <li key={i}>
          <h3 style={{marginBottom:"0"}}>{list.type} Certification</h3>
@@ -43,6 +27,7 @@ componentWillReceiveProps = (NextProps) => {
        </li>
      )
    })
+  }
     return(
 
       <div className="indexPage">
@@ -58,13 +43,8 @@ componentWillReceiveProps = (NextProps) => {
                I spend a lot of time alone; thinking about life and working on passion projects. I like to figure out things on my own, and when I am involved in a project I like having a hand in every part of said project. I am not the strongest writer but like everything else in my life, I will keep trying until I eventually am good at it (a screen reader helps as well, haha).</p>
           </Col>
           <Col xs={2} sm={3} md={3}>
-            {/* <Media query="(max-width:700px)">
-              {matches=>matches ?(<img src={this.state.img} style={{borderRadius:"9px",width:"10rem"}} alt="picture of Josh"/>):(<img src={this.state.img} style={{borderRadius:"9px",width:"18rem"}} alt="picture of Josh"/>)}
-         <img src={this.state.img} style={{borderRadius:"9px",width:"18rem"}} alt="picture of Josh"/>
-       </Media> */}
-
           <Media query="(max-width:700px)">
-          {matches => matches ? (<img src={this.state.img} style={{borderRadius:"9px",width:"9rem",marginLeft:"-2rem"}} />): (<img src={this.state.img} style={{borderRadius:"9px",width:"18rem"}} />)}
+          {matches => matches ? (<img src={(this.props.picture) ? this.props.picture : ""} alt="picture of Josh" style={{borderRadius:"9px",width:"9rem",marginLeft:"-2rem"}} />): (<img src={(this.props.picture) ? this.props.picture : ""} alt="picture of Josh" style={{borderRadius:"9px",width:"18rem"}} />)}
        </Media>
        </Col>
        </Row>

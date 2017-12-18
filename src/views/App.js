@@ -23,10 +23,9 @@ class App extends Component {
     }
 
     componentWillMount(){
-        
         db.on('value',snapshot => { 
             this.setState( { data: snapshot.val() } ) 
-        } )
+        })
     }
 
   render() {
