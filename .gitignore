@@ -33,3 +33,6 @@ chrome-user-data
 *react*min*.js
 !src/node_modules
 blog/
+
+semantic/*
+semantic.json

@@ -49,7 +49,7 @@ class Footer extends Component {
               <a href="https://www.linkedin.com/in/joshua-martin-55740652/" target="_blank" rel="noopener noreferrer">
                 <Icon name="linkedin square" size='large' color='black' link />
               </a>
-              <Button href={data.resumelink} target="_blank" basic color='grey'>Resume</Button><br />
+              <Button href={this.props.resumelink} target="_blank" basic color='grey'>Resume</Button><br />
               <Media query="(max-width:700px)">
                 {matches => matches ? (<p></p>) : (<p id="#dateupdate">Last updated, {this.state.updated}.</p>)}
               </Media>

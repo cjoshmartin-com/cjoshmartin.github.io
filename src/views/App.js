@@ -6,7 +6,7 @@ import Footer from "../component/Footer"
 import Main from './Main';
 import About from "./About";
 import Projects from "./Projects";
-// import Blog from './Blog';
+import Blog from './Blog';
 
 import { db } from '../firebase'
 
@@ -19,12 +19,13 @@ class App extends Component {
 
         this.state ={
             data: {},
+            link: "",
         }
     }
 
     componentWillMount(){
         db.on('value',snapshot => { 
-            this.setState( { data: snapshot.val() } ) 
+            this.setState( { data: snapshot.val(), link: snapshot.val().resume.link } ) 
         })
     }
 
@@ -36,10 +37,9 @@ class App extends Component {
          <Route exact={true} path="/" render={ ()=>( <Main {...this.state.data} /> ) }/> 
          <Route path="/about" render={()=> (<About {...this.state.data}/>)}/>
          <Route path="/projects" render={()=>(<Projects />)}/>
-         {/* <Route path="/blog" component={Blog} /> */}
+         <Route path="/blog" component={Blog} />
         </Switch>
-        {/* console.log(this.state.data) */}
-        <Footer {...this.state.data}/>
+        <Footer {...this.state.data} resumelink={this.state.link}/>
       </div>
     );
   }

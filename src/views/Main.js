@@ -5,6 +5,7 @@ import { NavItem, Nav } from 'react-bootstrap';
 import { Grid as Grids } from 'semantic-ui-react'
 
 import Media from "react-media"
+import TypeText from '../component/TypeText'
 
 export default class Main extends Component {
   render() {
@@ -44,7 +45,7 @@ export default class Main extends Component {
               <div style={{ textAlign: "center" }} className="jsonText">
                 <br />
                 <Grids centered columns={2}> 
-                  <Nav bsStyle="pills"><NavItem href="#/about"><span className="varName">Class</span> learnMore(<span className="varName">User newUser</span>)<span style={{ color: "black" }}>;</span></NavItem></Nav>
+                  <Nav bsStyle="pills"><NavItem href="#/about"><TypeText /></NavItem></Nav>
                 </Grids>
               </div>
             </Col>

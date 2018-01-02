@@ -75,9 +75,10 @@ class Projects extends Component{
 
     var merged = _.concat(codepen, gitreposFiltered,personaldb);
     var pushed=[];
-    for(var i=1;i<merged.length;i++){
+    for(var i=0;i<merged.length;i++){
       pushed[i]=merged[i * ranorder % merged.length]
     }
+    console.log(ranorder)
     this.setState({ projectList:pushed, isloaded: true });
   }
 
