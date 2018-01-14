@@ -6,6 +6,8 @@ import _ from 'lodash';
 
 import * as firebase from 'firebase';
 import axios from "axios";
+import DocumentTitle from 'react-document-title'
+
 
 class Projects extends Component{
   constructor(props){
@@ -42,7 +44,7 @@ class Projects extends Component{
       var octacat =["https://firebasestorage.googleapis.com/v0/b/cjoshmartin-f652e.appspot.com/o/github_projects.jpg?alt=media&token=1daa00d7-42c3-4d09-aedb-eb2eb62e7ca3","https://firebasestorage.googleapis.com/v0/b/cjoshmartin-f652e.appspot.com/o/octcat-with-glass-joshes-website.jpg?alt=media&token=3da43ec0-29e8-4ba6-8742-d7529cf81575","https://firebasestorage.googleapis.com/v0/b/cjoshmartin-f652e.appspot.com/o/classy-octcat-Joshes-website.jpeg?alt=media&token=ba89f23c-f51d-4366-94c0-08d7f9393d47"]
 
      await axios.get(`https://api.github.com/users/cjoshmartin/repos`).then(res=>{  // github repos data
-     // eslint-disable-next-line  
+     // eslint-disable-next-line
      gitrepos = res.data.map((list,index)=>{
          // TODO: do I want to tell what languages were used?
          if(!list.fork){
@@ -85,6 +87,7 @@ class Projects extends Component{
   render(){
     const projectList = this.state.projectList.map((list,index)=>{
       return(
+
         // <Col xs={12} sm={8} md={4} key={index} className="projectGrid">
           <Card key={index} href={list.link} target="_blank" color='grey'>
             <Image src={list.images.small} alt={list.title} fluid/>
@@ -105,6 +108,7 @@ class Projects extends Component{
       );
     });
     return(
+      <DocumentTitle title={"Josh Martin - Projects"}>
       <div>
         <Row>
           <Col md={10} sm={10} lg={10} xsOffset={2} smOffset={2} mdOffset={1} lgOffset={2} >
@@ -113,13 +117,12 @@ class Projects extends Component{
         <Grid>
         {(this.state.isloaded) ?<h1>Projects</h1> : "" }
 
-        
+
           {(this.state.isloaded) ? <Card.Group itemsPerRow={2} > {projectList} </Card.Group> : <Col className="projectGrid" ><Loader active inline="centered" size="medium"> Digging through my File Cabinet! 🗃 </Loader> </Col>}
     </Grid>
       </div>
-
-    ); 
+    </DocumentTitle>
+    );
   }
 }
 export default Projects;
-

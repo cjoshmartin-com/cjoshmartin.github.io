@@ -1,19 +1,29 @@
-import React, { Component  } from 'react';
+import React from 'react';
 import { Col,Row } from 'react-bootstrap';
+import BlogLink from '../component/BlogLink';
 
-import BlogPost from './BlogPost';
+import removeMd from 'remove-markdown'
 
-export default class Blog extends Component {
-    render(){
-        return (
-            <div>
-            <Row>
-            <Col md={10} lg={10} sm={10} xsOffset={1} smOffset={1} lgOffset={2} >
-                <h1>Blog</h1>
-                <BlogPost name={"Tacos"} discription={"this should be cut off after some length" } link={"https://www.google.com"} />
-            </Col>
-            </Row>
-            </div>
-        );
-    }
+import DocumentTitle from 'react-document-title'
+const Blog = (props) => {
+  const posts = Object.keys(props).map((key,i) =>{
+    const data = props[key]
+    return(
+      <BlogLink name={data.title} key={i} discription={removeMd(data.body)} link={`#/blog/${key}`} date={(data.date_modified === 'N/A') ? key : data.date_modified} />
+    )
+  })
+  return (
+    <DocumentTitle title={"Josh Martin - Blog"} >
+    <div>
+      <Row>
+        <Col md={10} lg={10} sm={10} xsOffset={1} smOffset={1} lgOffset={2} >
+          <h1 style={{display:'flex'}}>Blog</h1>
+          {posts}
+        </Col>
+      </Row>
+    </div>
+  </DocumentTitle>
+  );
 }
+
+export default  Blog

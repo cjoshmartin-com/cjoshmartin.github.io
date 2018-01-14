@@ -5,6 +5,8 @@ import Media from "react-media"
 
 import marked from "marked"
 
+import DocumentTitle from 'react-document-title'
+
 export default class About extends Component{
 
   render(){
@@ -12,13 +14,13 @@ export default class About extends Component{
 
 
     if(this.props.classes){
-  
+
       classList = this.props.classes.map((list, index) => {
      return (
        <li key={index}>{list.name}, {list.semester} ({list.classnumber})</li>
      );
    });
-  
+
    certificationList = this.props.certifications.map((list,i)=>{
      return (
        <li key={i}>
@@ -32,18 +34,19 @@ export default class About extends Component{
    })
    dev_envList = this.props.about.dev_env.map((list,i)=>{
      return(
-      <li key={i} dangerouslySetInnerHTML={ {__html: marked(list)}} /> 
+      <li key={i} dangerouslySetInnerHTML={ {__html: marked(list)}} />
      )
    })
   }
     return(
+      <DocumentTitle title={"Josh Martin - About"}>
       <div className="indexPage">
         {
           (this.props.about) ?
         <Grid>
           <Row>
             <Col xs={12} sm={12} md={12}>
-          
+
         <Grid>
           <Row>
             <Col xs={8} sm={8} md={7}>
@@ -81,12 +84,12 @@ export default class About extends Component{
     </Col>
     </Row>
       </Grid>
-      
-      : // else 
+
+      : // else
       <Loader active inline="centered" size="medium"> Thinking 🤔 </Loader>
     }
       </div>
+    </DocumentTitle>
     );
   }
 }
-
