@@ -4,8 +4,7 @@ import React, { Component  } from 'react';
 import marked from "marked"
 import moment from "moment";
 import DocumentTitle from 'react-document-title'
-import ReactDisqusThread from "react-disqus-thread"
-
+//import DisqusThread from '../component/DisqusThread.js'
 export default class BlogPost extends Component {
     state ={
         title: "",
@@ -43,17 +42,15 @@ export default class BlogPost extends Component {
                     </div>
                     <div style={{display:'flex', alignItems: 'center',justifyContent: 'center',}}>
                         <div dangerouslySetInnerHTML={ {__html: marked(this.state.body)}}/>
-                    </div>
-                <ReactDisqusThread
-                    shortname="cjoshmartin"
-                    identifier={this.props.id}
-                    title={this.state.title}
-                    url={`cjoshmartin.com/#/blog/${this.props.id}`}
-                    category_id="programming"
-                    />
+</div>
+{/*<DisqusThread
+          id="e94d73ff-fd92-467d-b643-c86889f4b8be"
+          title="How to integrate Disqus into ReactJS App"
+          path={`/#blog/${this.props.id}`}
+        /> */}
 
                 </ div>
-
+            
             </DocumentTitle>
             )
 
