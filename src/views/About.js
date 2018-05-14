@@ -55,17 +55,22 @@ const description = (me = "") => {
 }
 
 const  picture = (picture = "") => {
+  const alt_text = "picture of Josh";
+  const common_styles = {
+    borderRadius: "9px",
+    width: "9rem",
+  }
   return (
     <Col xs={2} sm={3} md={3}>
       <Media query="(max-width:700px)">
         {
           matches => matches ?
             (
-              <img src={picture} alt="picture of Josh" style={{ borderRadius: "9px", width: "9rem", marginLeft: "-2rem" }} />
+              <img src={picture} alt={alt_text} style={matches => matches ?{common_styles,marginLeft: "-2rem" } : {common_styles}} />
             )
             : 
             (
-              <img src={picture} alt="picture of Josh" style={{ borderRadius: "9px", width: "18rem" }} />
+              <img src={picture} alt={alt_text} style={{common_styles }} />
             )
         }
       </Media>
