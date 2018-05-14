@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-
 import { Button, Divider, Icon, Grid } from 'semantic-ui-react';
-
-import axios from "axios";
-import moment from "moment";
 import Media from "react-media"
-
 import PropTypes from 'prop-types';
 
 function tomail(email){
@@ -13,19 +8,6 @@ function tomail(email){
 }
 
 export default class Footer extends Component {
-  constructor(prop) {
-    super(prop);
-
-    this.state = {
-      updated: "",
-    }
-  }
-  componentDidMount() {
-    axios.get(`https://api.github.com/repos/cjoshmartin/cjoshmartin.github.io`)
-      .then(res => {
-        this.setState({ updated: moment(res.data.pushed_at, "YYYY-MM-DDThh:mm:ssZ").fromNow() }) // check when the this repo was last pushed and formats date
-      })
-  }
   render() {
     return (
       <div className="footer">
@@ -43,15 +25,19 @@ export default class Footer extends Component {
             <Grid.Column computer={6} mobile={4} />
             <Grid.Column computer={4} mobile={4}>
 
-              <a href="https://www.github.com/cjoshmartin" target="_blank" rel="noopener noreferrer">
+              <a href={this.props.links.github} target="_blank" rel="noopener noreferrer">
                 <Icon name='github' size='large' color='black' link />
               </a>
-              <a href="https://www.linkedin.com/in/joshua-martin-55740652/" target="_blank" rel="noopener noreferrer">
+              <a href={this.props.links.linkedin} target="_blank" rel="noopener noreferrer">
                 <Icon name="linkedin square" size='large' color='black' link />
               </a>
-              <Button href={this.props.resumelink} target="_blank" basic color='grey'>Resume</Button><br />
+              <Button href={this.props.links.resume} target="_blank" basic color='grey'>Resume</Button><br />
               <Media query="(max-width:700px)">
-                {matches => matches ? (<p></p>) : (<p id="#dateupdate">Last updated, {this.state.updated}.</p>)}
+                {
+                  matches => matches ? 
+                  (<p></p>) 
+                  : (<p id="#dateupdate">Last updated, {this.props.last_updated}.</p>)
+                  }
               </Media>
             </Grid.Column>
           </Grid.Row>
