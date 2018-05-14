@@ -3,6 +3,8 @@ import logo from '../logo.png';
 import { Nav, NavItem } from 'react-bootstrap';
 import { Grid} from 'semantic-ui-react'
 
+import PropTypes from 'prop-types';
+
 class Header extends Component {
 render(){
   return(
@@ -22,6 +24,10 @@ render(){
   );
 }
 
+}
+
+Header.propTypes ={
+    name: PropTypes.string.isRequired,
 }
 
 export default Header;

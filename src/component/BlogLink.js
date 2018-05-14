@@ -1,5 +1,6 @@
 import React, { Component  } from 'react';
 import moment from "moment";
+import PropTypes from 'prop-types';
 
 export default class BlogLink extends Component {
 
@@ -21,5 +22,20 @@ export default class BlogLink extends Component {
           </div>
         );
     }
+
+}
+
+BlogLink.defaultProps = {
+
+    discription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas elementum porta erat. Cras placerat consectetur placerat. Integer vel maximus ante. Donec blandit nulla et augue fringilla accumsan. Curabitur feugiat pretium neque. Suspendisse efficitur feugiat sapien, sed vestibulum odio dignissim vel. Praesent efficitur vestibulum diam, a congue elit dapibus eget. Quisque eget quam non lectus ornare bibendum. Sed congue nisi at dolor fermentum, a viverra mi congue. Nullam vulputate turpis nec libero pharetra, a volutpat sapien pellentesque. Phasellus tincidunt nec velit ac elementum. Curabitur volutpat velit a fringilla ullamcorper. Etiam at risus elit. Curabitur sem nulla, euismod vel nisl sit amet, posuere gravida massa. Morbi consectetur eu orci in ultricies. Curabitur tristique magna enim, ac mattis justo varius at.",
+
+}
+
+BlogLink.propTypes = {
+
+    date: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    discription: PropTypes.string,
 
 }

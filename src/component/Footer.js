@@ -6,9 +6,13 @@ import axios from "axios";
 import moment from "moment";
 import Media from "react-media"
 
+import PropTypes from 'prop-types';
 
+function tomail(email){
+    return "mailto:" + email;
+}
 
-class Footer extends Component {
+export default class Footer extends Component {
   constructor(prop) {
     super(prop);
 
@@ -23,11 +27,6 @@ class Footer extends Component {
       })
   }
   render() {
-
-    var tomail = function (email) {
-      return "mailto:" + email;
-    }
-    var data = this.props;
     return (
       <div className="footer">
         <Divider />
@@ -38,7 +37,8 @@ class Footer extends Component {
               <h3 className="footerText">
                 Josh Martin
         </h3>
-              <a href={tomail(data.email)}>{data.email}</a>
+              <a href={tomail(this.props.email)}>{this.props.email}</a>
+
             </Grid.Column>
             <Grid.Column computer={6} mobile={4} />
             <Grid.Column computer={4} mobile={4}>
@@ -60,4 +60,8 @@ class Footer extends Component {
     );
   }
 }
-export default Footer;
+
+Footer.propTypes = {
+    email: PropTypes.string.isRequired,
+    resumelink: PropTypes.string.isRequired,
+}
