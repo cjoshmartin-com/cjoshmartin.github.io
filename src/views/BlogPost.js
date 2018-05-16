@@ -24,23 +24,19 @@ export default class BlogPost extends Component {
 
 
     render(){
-        console.log(this.props)
         const toTitleCase = (str) =>
         {
             return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
         }
-
+        console.log(this.props)
         return(
             <DocumentTitle title={`Josh Martin - Blog / ${this.state.title}`} >
 
                 <div>
-                    <div style={{display:'flex', alignItems: 'center',justifyContent: 'center', flexDirection: 'column',}}>
-                        <h1 style={{fontSize:'4.5rem', marginBottom: 0}}>{toTitleCase(this.state.title)}</h1>
-                        <h4 style={{marginTop: 0, marginBottom: '3rem'}}>
-                            {(this.state.date_modified !== 'N/A') ? <span>{moment(this.state.date_modified, "x").calendar()}</span> : <span>{moment(this.props.id, "x").calendar()}</span>}</h4>
-
+                    <div>
+                        <h1 style={{fontSize:'4.5rem', marginBottom: 0}}>{this.state.title}</h1>
                     </div>
-                    <div style={{display:'flex', alignItems: 'center',justifyContent: 'center',}}>
+                    <div>
                         <div dangerouslySetInnerHTML={ {__html: marked(this.state.body)}}/>
 </div>
 {/*<DisqusThread
@@ -51,7 +47,7 @@ export default class BlogPost extends Component {
 
                 </ div>
             
-            </DocumentTitle>
+             </DocumentTitle>
             )
 
             }

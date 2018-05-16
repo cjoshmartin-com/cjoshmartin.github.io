@@ -1,18 +1,19 @@
 import React from 'react';
 import { Col,Row } from 'react-bootstrap';
 import BlogLink from '../component/BlogLink';
+import BlogPost from './BlogPost';
 
 import removeMd from 'remove-markdown'
 
 import DocumentTitle from 'react-document-title'
 
-function posts(props = {}){
+function posts(props = { title: ""}){
  return Object.keys(props).map((key,i) =>{
     const data = props[key]
     return(
       <BlogLink 
       name={data.title} 
-      key={i} discription={removeMd(data.body)} 
+      key={i} discription={toTruncate(removeMd(data.body)) } 
       link={`#/blog/${key}`}
 
       date={
@@ -23,17 +24,31 @@ function posts(props = {}){
     )
   })
 }
+function toTruncate(str ="")
+{
+  const sizeToTrun = 60;
+  if (str.length > sizeToTrun)
+    return str.substr(0,sizeToTrun) + "...";
+
+    return str;
+
+}
 
 const Blog = (props) => {
   return (
     <DocumentTitle title={"Josh Martin - Blog"} >
     <div>
       <Row>
-        <Col md={10} lg={10} sm={10} xsOffset={1} smOffset={1} lgOffset={2} >
+        <Col lg={3} md={3} sm={3} xsOffset={1}>
           <h1 style={{display:'flex'}}>Blog</h1>
-          {posts(props)}
-        </Col>
+          {posts(props.post)}
+          {console.log(props)}
+          </Col>
+          <Col lg={7} md={7} sm={6} xsOffset={0} lgOffset={0}>
+          <BlogPost {...props} id={props.id}/>
+          </Col>
       </Row>
+          
     </div>
   </DocumentTitle>
   );

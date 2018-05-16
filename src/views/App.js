@@ -11,7 +11,7 @@ import BlogPost from './BlogPost'
 
 import { db } from '../firebase'
 
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch,Redirect } from 'react-router-dom'
 
 import DocumentTitle from 'react-document-title'
 import _ from 'lodash';
@@ -120,8 +120,8 @@ export default class App extends Component {
                         <Route exact={true} path="/" render={() => (<Main {...this.state.data} />)} />
                         <Route path="/about" render={() => (<About {...this.state.data} />)} />
                         <Route path="/projects" render={() => (<Projects codepen={this.state.codepen} octacats={this.state.octacats} github={this.state.github.repos} misc_projects={this.state.data.projects} />)} />
-                        <Route exact path="/blog" render={() => (<Blog {...this.state.data.blog} />)} />
-                        <Route path='/blog/:id' render={(url) => (<BlogPost {...this.state.data.blog} id={url.match.params.id} />)} />
+                        <Route exact path="/blog" render={(parms) => (<Redirect to={`/blog/${Object.keys(this.state.data.blog)[0]}`} />)} />
+                        <Route path='/blog/:id' render={(url) => (<Blog post={this.state.data.blog} id={url.match.params.id} />)} />
                     </Switch>
 
                     <Footer {...this.state.data} links={this.state.links} last_updated={this.state.github.website.last_updated} />
