@@ -1,6 +1,7 @@
 // Database
-
-import * as firebase from 'firebase';
+import rebase   from 're-base'
+import firebase from 'firebase/app'
+require("firebase/database");
 
     const app = firebase.initializeApp({
       apiKey: "AIzaSyBDkYL7SPL_rERsHW6cvVP6WwdE352iujY",
@@ -11,5 +12,5 @@ import * as firebase from 'firebase';
       messagingSenderId: "277001799380"
       });
 
-export default app;
-export const db = firebase.database().ref()
+const db = firebase.database(app)
+export default rebase.createClass(db)

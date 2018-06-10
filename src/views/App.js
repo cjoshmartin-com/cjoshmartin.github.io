@@ -7,12 +7,12 @@ import Main from './Main';
 import About from "./About";
 import Projects from "./Projects";
 import Blog from './Blog';
-import BlogPost from './BlogPost'
+// import BlogPost from './BlogPost'
 
-import { db } from '../firebase'
+import database from '../firebase'
 
 import { Route, Switch,Redirect } from 'react-router-dom'
-
+import {Loader} from "semantic-ui-react"
 import DocumentTitle from 'react-document-title'
 import _ from 'lodash';
 import axios from "axios";
@@ -69,6 +69,7 @@ export default class App extends Component {
 
         this.state = {
             data: {},
+            isDataSynced: false,
             codepen: {},
             github: {
                 repos: {},
@@ -85,46 +86,109 @@ export default class App extends Component {
     }
 
     async componentWillMount() {
+        const nextState ={};
 
-        db.on('value', firebaseData => {
-            this.setState({ data: firebaseData.val(), link: firebaseData.val().resume.link })
-        })
-
-        let codepen = await axios.get(`http://cpv2api.com/pens/showcase/cjoshmartin/`) // codepen data
+        nextState.codepen = await axios.get(`http://cpv2api.com/pens/showcase/cjoshmartin/`) // codepen data
             .then(res => {
-               return codepenList(res)
+                return codepenList(res)
             });
 
-        this.setState({codepen})
-
-        let gitrepos = await axios.get(`https://api.github.com/users/cjoshmartin/repos`)
-        .then(res => githubRepoList(res));
-
-        const github = {...this.state.github };
-        github.repos = gitrepos;
+        nextState.github = {...this.state.github };
+        nextState.github.repos = await axios.get(`https://api.github.com/users/cjoshmartin/repos`)
+            .then(res => githubRepoList(res));
 
         await axios.get(`https://api.github.com/repos/cjoshmartin/cjoshmartin.github.io`)
             .then(res => {
-                github.website.last_updated = moment(res.data.pushed_at, "YYYY-MM-DDThh:mm:ssZ").fromNow();
-                this.setState({github})
+                nextState.github.website.last_updated = moment(res.data.pushed_at, "YYYY-MM-DDThh:mm:ssZ").fromNow();
             })
+
+        this.setState(
+            nextState,
+            this.syncData()
+        )
     }
 
+    syncData = () => {
+        this.bindingRef = database.bindToState('/',
+            {
+                context: this,
+                state: 'data',
+                then: () => {
+                    const ordered = {};
+                    const nextState = {...this.state}
+
+                    Object.keys(nextState.data.blog).sort((a,b)=> b-a).forEach(function(key) {
+                        ordered[key] = nextState.data.blog[key];
+                    });
+
+                    this.setState({
+                        data:{
+                            ...nextState.data,
+                            blog: ordered,
+                        },
+                        links: {
+                            ...nextState.links,
+                          resume:   nextState.data.resume.link
+                        },
+                        isDataSynced: true
+                    })
+                }
+            }
+
+        )
+    }
     render() {
         return (
             <DocumentTitle title="Josh Martin">
                 <div className="App" >
                     <Header name={this.state.data.name} />
+                    { this.state.isDataSynced ?
+                        <div>
+                            <Switch>
+                                <Route
+                                    exact={true} path="/"
+                                    render={() => (<Main {...this.state.data} />)}/>
 
-                    <Switch>
-                        <Route exact={true} path="/" render={() => (<Main {...this.state.data} />)} />
-                        <Route path="/about" render={() => (<About {...this.state.data} />)} />
-                        <Route path="/projects" render={() => (<Projects codepen={this.state.codepen} octacats={this.state.octacats} github={this.state.github.repos} misc_projects={this.state.data.projects} />)} />
-                        <Route exact path="/blog" render={(parms) => (<Redirect to={`/blog/${Object.keys(this.state.data.blog)[0]}`} />)} />
-                        <Route path='/blog/:id' render={(url) => (<Blog post={this.state.data.blog} id={url.match.params.id} />)} />
-                    </Switch>
+                                <Route
+                                    path="/about"
+                                    render={() => (<About {...this.state.data} />)}
+                                />
 
-                    <Footer {...this.state.data} links={this.state.links} last_updated={this.state.github.website.last_updated} />
+                                <Route path="/projects" render={
+                                    () => (<Projects
+                                            codepen={this.state.codepen}
+                                            octacats={this.state.octacats}
+                                            github={this.state.github.repos}
+                                            misc_projects={this.state.data.projects}/>
+                                    )}
+                                />
+                                <Route
+                                    exact path="/blog"
+                                    render={
+                                        () => (
+                                            <Redirect
+                                                to={`/blog/${Object.keys(this.state.data.blog)[0]}`}
+                                            />
+                                        )}
+                                />
+                                <Route
+                                    path='/blog/:id'
+                                    render={
+                                        (url) => (
+                                            <Blog
+                                                post={this.state.data.blog}
+                                                id={url.match.params.id}/>)}
+                                />
+                            </Switch>
+
+                            <Footer
+                                {...this.state.data}
+                                links={this.state.links}
+                                last_updated={this.state.github.website.last_updated} />
+                        </div>
+                        // eslint-disable-next-line
+                        :<Loader active inline="centered" size="medium"> Thinking<span role="img">🤔</span></Loader>
+                    }
                 </div>
             </DocumentTitle>
         );

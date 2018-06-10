@@ -48,6 +48,6 @@ export default class Footer extends Component {
 }
 
 Footer.propTypes = {
-    email: PropTypes.string.isRequired,
-    resumelink: PropTypes.string.isRequired,
+    email: PropTypes.string,
+    resumelink: PropTypes.string,
 }

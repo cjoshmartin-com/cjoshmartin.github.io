@@ -27,7 +27,7 @@ render(){
 }
 
 Header.propTypes ={
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
 }
 
 export default Header;
