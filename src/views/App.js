@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import base64Images from '../images/base64Images'
 import Header from "../component/Header"
 import Footer from "../component/Footer"
 
@@ -7,7 +8,6 @@ import Main from './Main';
 import About from "./About";
 import Projects from "./Projects";
 import Blog from './Blog';
-// import BlogPost from './BlogPost'
 
 import database from '../firebase'
 
@@ -35,11 +35,6 @@ function codepenList(res = {}) {
     })
 }
 function githubRepoList(res = {}){
-    const octacats = [
-        "https://firebasestorage.googleapis.com/v0/b/cjoshmartin-f652e.appspot.com/o/github_projects.jpg?alt=media&token=1daa00d7-42c3-4d09-aedb-eb2eb62e7ca3",
-        "https://firebasestorage.googleapis.com/v0/b/cjoshmartin-f652e.appspot.com/o/octcat-with-glass-joshes-website.jpg?alt=media&token=3da43ec0-29e8-4ba6-8742-d7529cf81575",
-        "https://firebasestorage.googleapis.com/v0/b/cjoshmartin-f652e.appspot.com/o/classy-octcat-Joshes-website.jpeg?alt=media&token=ba89f23c-f51d-4366-94c0-08d7f9393d47"
-    ]
 
     return res.data.map((list, index) => {
         // TODO: do I want to tell what languages were used?
@@ -47,7 +42,7 @@ function githubRepoList(res = {}){
             return {
                 title: _.startCase(list.name),
                 images: {
-                    small:octacats[index * ranorder % 3]
+                    small:base64Images.octacats[index * ranorder % 3]
                 },
                 details: _.capitalize(list.description),
                 link: list.html_url,
