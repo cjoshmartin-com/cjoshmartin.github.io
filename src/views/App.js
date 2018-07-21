@@ -131,7 +131,8 @@ export default class App extends Component {
             }
 
         )
-    }
+    };
+
     render() {
         return (
             <DocumentTitle title="Josh Martin">
@@ -182,7 +183,7 @@ export default class App extends Component {
                                 last_updated={this.state.github.website.last_updated} />
                         </div>
                         // eslint-disable-next-line
-                        :<Loader active inline="centered" size="medium"> Thinking<span role="img">🤔</span></Loader>
+                        :<Loader active inline="centered" size="large"></Loader>
                     }
                 </div>
             </DocumentTitle>

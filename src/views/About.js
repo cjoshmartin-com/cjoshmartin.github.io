@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Grid,Row,Col} from 'react-bootstrap';
 import Media from "react-media"
 
@@ -51,31 +51,26 @@ const description = (me = "") => {
             <p dangerouslySetInnerHTML={{ __html: marked(me) }} />
         </Col>
     )
-}
+};
 
 const  picture = (picture = "") => {
     const alt_text = "picture of Josh";
     const common_styles = {
         borderRadius: "9px",
         width: "9rem",
-    }
+    };
     return (
         <Col xs={2} sm={3} md={3}>
             <Media query="(max-width:700px)">
                 {
-                    matches => matches ?
-                        (
-                            <img src={picture} alt={alt_text} style={matches => matches ?{common_styles,marginLeft: "-2rem" } : {common_styles}} />
-                        )
-                        :
-                        (
-                            <img src={picture} alt={alt_text} style={{common_styles }} />
-                        )
+                    matches => matches
+                        ? <img src={picture} alt={alt_text} style={matches => matches ?{common_styles,marginLeft: "-2rem" } : {common_styles}} />
+                        : <img src={picture} alt={alt_text} style={{common_styles }} />
                 }
             </Media>
         </Col>
     )
-}
+};
 
 const relevantCoursework = (classes = [] ) => {
     return (
@@ -86,7 +81,7 @@ const relevantCoursework = (classes = [] ) => {
             </ul>
         </Col>
     )
-}
+};
 
 const developerEnvironment = (dev_env =[]) => {
     return (
@@ -97,7 +92,7 @@ const developerEnvironment = (dev_env =[]) => {
             </ul>
         </Col>
     )
-}
+};
 
 const certifications = (certificationsItems = []) => {
     return (
@@ -108,11 +103,9 @@ const certifications = (certificationsItems = []) => {
             </ul>
         </Col>
     )
-}
+};
 
-export default class About extends Component {
-
-    render() {
+ const About = (props) => {
         return (
             <DocumentTitle title={"Josh Martin - About"}>
                 <div className="indexPage">
@@ -122,29 +115,25 @@ export default class About extends Component {
                             <Col xs={12} sm={12} md={12}>
                                 <Grid>
                                     <Row>
-
-                                        {description(this.props.about.me)}
-                                        {picture(this.props.picture)}
-
+                                        {description(props.about.me)}
+                                        {picture(props.picture)}
                                     </Row>
                                 </Grid>
                                 <br />
                             </Col>
                         </Row>
                         <Row>
-
-                            {relevantCoursework(this.props.classes)}
-                            {developerEnvironment(this.props.about.dev_env)}
-                            {certifications(this.props.certifications)}
-
+                            {relevantCoursework(props.classes)}
+                            {developerEnvironment(props.about.dev_env)}
+                            {certifications(props.certifications)}
                         </Row>
                     </Grid>
                 </div>
             </DocumentTitle>
         );
-    }
-}
+};
 
+export default About
 
 About.defaultProps = {
     about: {
@@ -152,11 +141,11 @@ About.defaultProps = {
     },
     class : {},
     picture: "",
-}
+};
 
 About.protoTypes = {
     about: PropTypes.object,
     picture: PropTypes.string,
     class: PropTypes.array,
     certifications: PropTypes.array,
-}
+};

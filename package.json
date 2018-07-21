@@ -1,6 +1,6 @@
 {
   "name": "Website",
-  "version": "0.1.0",
+  "version": "4.0.0-development",
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
@@ -26,14 +26,22 @@
     "gh-pages": "^1.0.0",
     "react-scripts": "1.0.7",
     "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.5.0"
+    "webpack-dev-server": "^2.5.0",
+    "travis-deploy-once": "^5.0.1",
+    "semantic-release": "^15.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && cp CNAME ./build",
     "deploy": "gh-pages -d build -b master",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
-  "homepage": "http://www.cjoshmartin.com"
+  "homepage": "http://www.cjoshmartin.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cjoshmartin/cjoshmartin.github.io.git"
+  }
 }

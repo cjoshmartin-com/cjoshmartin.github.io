@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button, Divider, Icon, Grid } from 'semantic-ui-react';
 import Media from "react-media"
 import PropTypes from 'prop-types';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col,Row } from 'react-bootstrap';
 import BlogLink from '../component/BlogLink';
-import BlogPost from './BlogPost';
+import BlogPost from '../component/BlogPost';
 
 import removeMd from 'remove-markdown'
 import DocumentTitle from 'react-document-title'

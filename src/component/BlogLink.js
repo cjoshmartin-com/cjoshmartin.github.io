@@ -12,7 +12,7 @@ export default class BlogLink extends Component {
             <div>
                 <div style={{ display: 'flex', marginBottom: '2rem' }}>
                     <div>
-                        <span>{moment(this.props.date, "x").format("MMMM YY")} </span>
+                        <span>{moment(this.props.date, "x").format("MMMM Do, YYYY")} </span>
                         <a href={this.props.link} ><h2> {toTitleCase(this.props.name)} </h2> </a>
                         <p>{this.props.discription} </p>
                     </div>

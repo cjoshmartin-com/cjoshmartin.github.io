@@ -5,7 +5,7 @@ import {Loader} from "semantic-ui-react"
 import marked from "marked"
 // import moment from "moment";
 import DocumentTitle from 'react-document-title'
-//import DisqusThread from '../component/DisqusThread.js'
+import DisqusThread from '../component/DisqusThread.js'
 const BlogPost =(props)=> {
     const {
         post,
@@ -23,6 +23,7 @@ const BlogPost =(props)=> {
                     <div>
                         <div dangerouslySetInnerHTML={{ __html: marked(post[id].body) }} />
                     </div>
+                    <DisqusThread id={id} title={post[id].title} path={`blog/#/${id}`}/>
                 </ div>
             </DocumentTitle>
         )
