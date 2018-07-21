@@ -34,10 +34,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build && cp CNAME ./build",
     "deploy": "gh-pages -d build -b master",
-    "test": "react-scripts test --env=jsdom",
+    "test": "echo 'no test yet'",
     "eject": "react-scripts eject",
     "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release --branch v4"
   },
   "homepage": "http://www.cjoshmartin.com",
   "repository": {
