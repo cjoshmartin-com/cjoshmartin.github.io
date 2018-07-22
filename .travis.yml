@@ -20,9 +20,10 @@ deploy:
   provider: pages
   skip_cleanup: true
   local_dir: build/
+  target-branch: master
   github_token: $GH_TOKEN
   on:
-    branch: master
+    branch: v4
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
