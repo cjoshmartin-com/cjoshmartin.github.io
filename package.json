@@ -43,5 +43,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/cjoshmartin/cjoshmartin.github.io.git"
-  }
+  },
+  "release": { "branch": "master" }
 }
