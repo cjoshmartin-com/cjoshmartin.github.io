@@ -16,7 +16,13 @@ node_js:
 after_success:
   - npm run travis-deploy-once "npm run semantic-release"
   - npm run build
-  - npm run deploy
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: build/
+  github_token: $GH_TOKEN
+  on:
+    branch: master
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
