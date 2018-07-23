@@ -1,66 +1,26 @@
 import React, { Component } from 'react';
-import '../App.css';
-import base64Images from '../images/base64Images'
-import Header from "../component/Header"
-import Footer from "../component/Footer"
+import '../../App.css';
+import Header from "../../component/Header"
+import Footer from "../../component/Footer"
 
-import Main from './Main';
-import About from "./About";
-import Projects from "./Projects";
-import Blog from './Blog';
+import HomeView from '../home/HomeView';
+import AboutView from "../about/AboutView";
+import ProjectsView from "../projects/ProjectsView";
+import BlogView from '../blog/BlogView';
 
-import database from '../firebase'
+import database from '../../firebase'
 
 import { Route, Switch,Redirect } from 'react-router-dom'
 import {Loader} from "semantic-ui-react"
 import DocumentTitle from 'react-document-title'
-import _ from 'lodash';
 import axios from "axios";
 import moment from "moment";
+import {codepenList, githubRepoList} from "./MainAppUtils";
 
-const ranorder = Math.floor((Math.random() * 10) + 1); // seed for randomize of images
-
-function codepenList(res = {}) {
-    return res.data.data.map((list, index) => {
-        return {
-            title: _.startCase(list.title),
-            images: { small: list.images.small },
-            details: _.capitalize(list.details),
-            link: list.link,
-            icon: {
-                name: "Codepen",
-                icon: "codepen",
-            }
-        }
-    })
-}
-function githubRepoList(res = {}){
-
-    return res.data.map((list, index) => {
-        // TODO: do I want to tell what languages were used?
-        if (!list.fork) {
-            return {
-                title: _.startCase(list.name),
-                images: {
-                    small:base64Images.octacats[index * ranorder % 3]
-                },
-                details: _.capitalize(list.description),
-                link: list.html_url,
-                icon: {
-                    name: "Github",
-                    icon: "github"
-                }
-            }
-        } // end of check for !list.fork
-        return undefined;
-    }).filter(obj => {
-        return obj !== undefined
-    })
-}
-export default class App extends Component {
+export default class MainAppContainer extends Component {
 
     constructor(prop) {
-        super(prop)
+        super(prop);
 
         this.state = {
             data: {},
@@ -143,15 +103,15 @@ export default class App extends Component {
                             <Switch>
                                 <Route
                                     exact={true} path="/"
-                                    render={() => (<Main {...this.state.data} />)}/>
+                                    render={() => (<HomeView {...this.state.data} />)}/>
 
                                 <Route
                                     path="/about"
-                                    render={() => (<About {...this.state.data} />)}
+                                    render={() => (<AboutView {...this.state.data} />)}
                                 />
 
                                 <Route path="/projects" render={
-                                    () => (<Projects
+                                    () => (<ProjectsView
                                             codepen={this.state.codepen}
                                             octacats={this.state.octacats}
                                             github={this.state.github.repos}
@@ -171,7 +131,7 @@ export default class App extends Component {
                                     path='/blog/:id'
                                     render={
                                         (url) => (
-                                            <Blog
+                                            <BlogView
                                                 post={this.state.data.blog}
                                                 id={url.match.params.id}/>)}
                                 />

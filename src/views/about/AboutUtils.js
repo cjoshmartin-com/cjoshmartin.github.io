@@ -1,12 +1,8 @@
 import React from 'react';
-import {Grid,Row,Col} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
 import Media from "react-media"
 
 import marked from "marked"
-
-import DocumentTitle from 'react-document-title'
-import PropTypes from 'prop-types'
-
 function classList( classes = [])
 {
     return classes.map((list, index) => {
@@ -53,7 +49,7 @@ const description = (me = "") => {
     )
 };
 
-const  picture = (picture = "") => {
+const picture = (picture = "") => {
     const alt_text = "picture of Josh";
     const common_styles = {
         borderRadius: "9px",
@@ -105,47 +101,14 @@ const certifications = (certificationsItems = []) => {
     )
 };
 
- const About = (props) => {
-        return (
-            <DocumentTitle title={"Josh Martin - About"}>
-                <div className="indexPage">
 
-                    <Grid>
-                        <Row>
-                            <Col xs={12} sm={12} md={12}>
-                                <Grid>
-                                    <Row>
-                                        {description(props.about.me)}
-                                        {picture(props.picture)}
-                                    </Row>
-                                </Grid>
-                                <br />
-                            </Col>
-                        </Row>
-                        <Row>
-                            {relevantCoursework(props.classes)}
-                            {developerEnvironment(props.about.dev_env)}
-                            {certifications(props.certifications)}
-                        </Row>
-                    </Grid>
-                </div>
-            </DocumentTitle>
-        );
-};
-
-export default About
-
-About.defaultProps = {
-    about: {
-        me: "db has fail, please refresh",
-    },
-    class : {},
-    picture: "",
-};
-
-About.protoTypes = {
-    about: PropTypes.object,
-    picture: PropTypes.string,
-    class: PropTypes.array,
-    certifications: PropTypes.array,
-};
+export {
+    classList,
+    certificationList,
+    developerEnvironmentList,
+    description,
+    picture,
+    relevantCoursework,
+    developerEnvironment,
+    certifications
+}
