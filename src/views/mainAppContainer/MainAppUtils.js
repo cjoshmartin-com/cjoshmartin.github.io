@@ -1,4 +1,3 @@
-import React from 'react';
 import _ from 'lodash';
 import base64Images from '../../images/base64Images'
 

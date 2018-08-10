@@ -6,11 +6,10 @@ import Footer from "../../component/Footer"
 import HomeView from '../home/HomeView';
 import AboutView from "../about/AboutView";
 import ProjectsView from "../projects/ProjectsView";
-import BlogView from '../blog/BlogView';
 
 import database from '../../firebase'
 
-import { Route, Switch,Redirect } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import {Loader} from "semantic-ui-react"
 import DocumentTitle from 'react-document-title'
 import axios from "axios";
@@ -117,23 +116,6 @@ export default class MainAppContainer extends Component {
                                             github={this.state.github.repos}
                                             misc_projects={this.state.data.projects}/>
                                     )}
-                                />
-                                <Route
-                                    exact path="/blog"
-                                    render={
-                                        () => (
-                                            <Redirect
-                                                to={`/blog/${Object.keys(this.state.data.blog)[0]}`}
-                                            />
-                                        )}
-                                />
-                                <Route
-                                    path='/blog/:id'
-                                    render={
-                                        (url) => (
-                                            <BlogView
-                                                post={this.state.data.blog}
-                                                id={url.match.params.id}/>)}
                                 />
                             </Switch>
 

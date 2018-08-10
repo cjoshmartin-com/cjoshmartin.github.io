@@ -44,5 +44,7 @@
     "type": "git",
     "url": "https://github.com/cjoshmartin/cjoshmartin.github.io.git"
   },
-  "release": { "branch": "gh-pages" }
+  "release": {
+    "branch": "gh-pages"
+  }
 }
