@@ -33,16 +33,16 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && cp CNAME ./build",
-    "deploy": "gh-pages -d build -b master",
+    "deploy": "gh-pages -d build -b gh-pages",
     "test": "echo 'no test yet'",
     "eject": "react-scripts eject",
     "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release --branch v4"
+    "semantic-release": "semantic-release"
   },
   "homepage": "http://www.cjoshmartin.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/cjoshmartin/cjoshmartin.github.io.git"
   },
-  "release": { "branch": "master" }
+  "release": { "branch": "gh-pages" }
 }
