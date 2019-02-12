@@ -19,6 +19,7 @@ class Header extends Component {
                             <NavItem href="/">Home</NavItem>
                             <NavItem href="#/about">About</NavItem>
                             <NavItem href="#/projects"> Projects</NavItem>
+                            <NavItem href="http://blog.cjoshmartin.com"> Blog</NavItem>
                         </Nav>
                     </Grid>
                 </div>

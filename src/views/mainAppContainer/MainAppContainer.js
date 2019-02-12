@@ -48,7 +48,7 @@ export default class MainAppContainer extends Component {
             });
 
         nextState.github = {...this.state.github };
-        nextState.github.repos = await axios.get(`https://api.github.com/users/cjoshmartin/repos`)
+        nextState.github.repos = await axios.get(`https://api.github.com/users/cjoshmartin/repos?per_page=100`)
             .then(res => githubRepoList(res));
 
         await axios.get(`https://api.github.com/repos/cjoshmartin/cjoshmartin.github.io`)
