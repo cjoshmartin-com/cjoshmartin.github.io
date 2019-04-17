@@ -42,7 +42,7 @@ export default class MainAppContainer extends Component {
     async componentWillMount() {
         const nextState ={};
 
-        nextState.codepen = await axios.get(`http://cpv2api.com/pens/showcase/cjoshmartin/`) // codepen data
+        nextState.codepen = await axios.get(`https://cpv2api.herokuapp.com/pens/showcase/cjoshmartin`) // codepen data
             .then(res => {
                 return codepenList(res)
             });
