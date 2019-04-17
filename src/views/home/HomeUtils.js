@@ -66,7 +66,7 @@ const githubCommitImage = () => {
     const github = {
         url: "https://www.github.com/cjoshmartin",
         graph: {
-            img: "http://ghchart.rshah.org/cjoshmartin",
+            img: "https://ghchart.rshah.org/cjoshmartin",
             alt: "cjoshmartin's Github chart",
         },
     }
