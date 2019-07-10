@@ -1,0 +1,6 @@
+[submodule "resume"]
+	path = resume
+	url = https://github.com/cjoshmartin-com/resume
+[submodule "blog"]
+	path = blog
+	url = https://github.com/cjoshmartin/blog
