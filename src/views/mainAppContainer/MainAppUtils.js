@@ -2,6 +2,9 @@ import _ from 'lodash';
 import base64Images from '../../images/base64Images'
 
 function codepenList(res = {}) {
+    if (res == undefined)
+        return {}
+
     return res.data.data.map((list, index) => ({
             title: _.startCase(list.title),
             images: { small: list.images.small },

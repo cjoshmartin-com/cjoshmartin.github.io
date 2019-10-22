@@ -36,3 +36,4 @@ blog/
 
 semantic/*
 semantic.json
+\.cache/
