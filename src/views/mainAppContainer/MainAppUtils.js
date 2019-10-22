@@ -2,10 +2,13 @@ import _ from 'lodash';
 import base64Images from '../../images/base64Images'
 
 function codepenList(res = {}) {
-    if (res == undefined)
+    if (res === undefined)
         return {}
 
-    return res.data.data.map((list, index) => ({
+    return res 
+            && res.data 
+            && res.data.data 
+            && res.data.data.map((list, index) => ({
             title: _.startCase(list.title),
             images: { small: list.images.small },
             details: _.capitalize(list.details),
@@ -21,7 +24,9 @@ function githubRepoList(res = {}){
 
     const ranorder = Math.floor((Math.random() * 10) + 1); // seed for randomize of images
 
-    return res.data.map((list, index) => {
+    return res
+           && res.data
+           && res.data.map((list, index) => {
         // TODO: do I want to tell what languages were used?
         if (!list.fork) {
             return {

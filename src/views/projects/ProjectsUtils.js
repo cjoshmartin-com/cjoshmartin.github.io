@@ -16,10 +16,8 @@ function createProjectList(projects = []) {
                         <Card.Description dangerouslySetInnerHTML={{ __html: list.details }} />
                     </Card.Content>
                     <Card.Content extra>
-                        <a>
                             <Icon name={list.icon.icon} />
                             {list.icon.name}
-                        </a>
                     </Card.Content>
                 </Card>
             </Col>

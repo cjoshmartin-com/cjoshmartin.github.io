@@ -8,7 +8,7 @@
     "firebase": "4.6.2",
     "history": "^1.17.0",
     "lodash": "^4.17.15",
-    "marked": "^0.3.7",
+    "marked": "^0.7.0",
     "moment": "^2.18.1",
     "prop-types": "^15.6.1",
     "re-base": "^3.2.3",
@@ -25,10 +25,8 @@
   "devDependencies": {
     "gh-pages": "^2.1.1",
     "react-scripts": "^3.2.0",
-    "semantic-release": "^15.13.27",
-    "travis-deploy-once": "^5.0.1",
-    "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.11.5"
+    "semantic-release": "^15.13.31",
+    "travis-deploy-once": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,5 +44,17 @@
   },
   "release": {
     "branch": "gh-pages"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
