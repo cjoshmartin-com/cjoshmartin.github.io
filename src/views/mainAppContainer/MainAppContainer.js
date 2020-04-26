@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../App.css';
 import Header from "../../component/Header"
 import Footer from "../../component/Footer"
+import IsLoaded from "../../component/IsLoaded"
 
 import HomeView from '../home/HomeView';
 import AboutView from "../about/AboutView";
@@ -10,7 +11,6 @@ import ProjectsView from "../projects/ProjectsView";
 import database from '../../firebase'
 
 import { Route, Switch } from 'react-router-dom'
-import {Loader} from "semantic-ui-react"
 import DocumentTitle from 'react-document-title'
 import axios from "axios";
 import moment from "moment";
@@ -97,24 +97,25 @@ export default class MainAppContainer extends Component {
             <DocumentTitle title="Josh Martin">
                 <div className="App" >
                     <Header name={this.state.data.name} />
-                    { this.state.isDataSynced ?
-                        <div>
-                            <Switch>
-                                <Route
-                                    exact={true} path="/"
-                                    render={() => (<HomeView {...this.state.data} />)}/>
+                    <IsLoaded
+                        loaded={this.state.isDataSynced } 
+                    >
+                        <Switch>
+                            <Route
+                                exact={true} path="/"
+                                render={() => (<HomeView {...this.state.data} />)}/>
 
-                                <Route
-                                    path="/about"
-                                    render={() => (<AboutView {...this.state.data} />)}
-                                />
+                            <Route
+                                path="/about"
+                                render={() => (<AboutView {...this.state.data} />)}
+                            />
 
-                                <Route path="/projects" render={
+                        <Route path="/projects" render={
                                     () => (<ProjectsView
-                                            codepen={this.state.codepen}
-                                            octacats={this.state.octacats}
-                                            github={this.state.github.repos}
-                                            misc_projects={this.state.data.projects}/>
+                                        codepen={this.state.codepen}
+                                        octacats={this.state.octacats}
+                                        github={this.state.github.repos}
+                                        misc_projects={this.state.data.projects}/>
                                     )}
                                 />
                             </Switch>
@@ -123,12 +124,10 @@ export default class MainAppContainer extends Component {
                                 {...this.state.data}
                                 links={this.state.links}
                                 last_updated={this.state.github.website.last_updated} />
-                        </div>
-                        // eslint-disable-next-line
-                        :<Loader active inline="centered" size="large"></Loader>
-                    }
-                </div>
-            </DocumentTitle>
+                        </IsLoaded>
+
+                    </div>
+                </DocumentTitle>
         );
     }
 }
