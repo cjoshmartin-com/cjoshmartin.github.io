@@ -24,11 +24,6 @@
   font-size: large;
   position: relative;
 }
-@media only screen and (max-width:600px){
-  p#dataupated{
-   display: none !important;
-  }
-}
 
 @keyframes App-logo-spin {
   0% { transform: rotate(-10deg); }
