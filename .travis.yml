@@ -14,7 +14,7 @@ cache:
 node_js:
   - '8'
 after_success:
-  - npm run travis-deploy-once "npm run semantic-release"
+  - npm run semantic-release
   - npm run build
 deploy:
   provider: pages
