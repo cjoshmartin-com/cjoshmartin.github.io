@@ -5,7 +5,6 @@ import Footer from "../../component/Footer"
 import IsLoaded from "../../component/IsLoaded"
 
 import HomeView from '../home/HomeView';
-import AboutView from "../about/AboutView";
 import ProjectsView from "../projects/ProjectsView";
 
 import database from '../../firebase'
@@ -79,11 +78,6 @@ export default function MainAppContainer() {
                             <Route
                                 exact={true} path="/"
                                 render={() => (<HomeView picture={picture} />)}/>
-
-                            <Route
-                                path="/about"
-                                render={() => (<AboutView {...data} />)}
-                            />
 
                         <Route path="/projects" render={
                                     () => (<ProjectsView

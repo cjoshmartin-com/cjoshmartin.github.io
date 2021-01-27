@@ -17,7 +17,6 @@ class Header extends Component {
                     <Grid centered columns={2}>
                         <Nav bsStyle="pills" >
                             <NavItem href="/">Home</NavItem>
-                            <NavItem href="#/about">About</NavItem>
                             <NavItem href="#/projects"> Projects</NavItem>
                             <NavItem href="http://blog.cjoshmartin.com"> Blog</NavItem>
                         </Nav>
