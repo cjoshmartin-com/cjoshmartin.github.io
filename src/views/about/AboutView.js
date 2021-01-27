@@ -2,7 +2,6 @@ import React from 'react';
 import {Grid,Row,Col} from 'react-bootstrap';
 import {
     description,
-    picture,
     relevantCoursework,
     developerEnvironment,
     certifications
@@ -22,7 +21,6 @@ import PropTypes from 'prop-types'
                                 <Grid>
                                     <Row>
                                         {description(props.about.me)}
-                                        {picture(props.picture)}
                                     </Row>
                                 </Grid>
                                 <br />

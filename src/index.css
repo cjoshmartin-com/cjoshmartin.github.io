@@ -14,6 +14,8 @@ span.interests{
   color: green;
   margin-right: 5px;
 }
+
+
 h3.footerText, p.footerText {
     margin: 0;
     padding: 0;
@@ -81,3 +83,44 @@ div.jsonText{
   margin-top: 15px;
   margin-bottom: 5px;
 }
+
+
+@media screen and (max-width: 402px) {
+
+  figure img {
+    width: 35ch;
+}  
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    align-content: baseline;
+
+  }
+
+  article p {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+
+  }
+}
+
+
+/*div.home-page {*/
+  /*display: grid;*/
+  /*grid-template-columns: minmax(1.2rem, 1fr) minmax(auto, 57ch) minmax(1.2rem, 1fr);*/
+/*}*/
+/*div.home-page > p {*/
+  /*grid-column: 2;*/
+  /*padding: 1rem;*/
+/*}*/
+
+/*div.home-page > img {*/
+  /*grid-column: 1 / 4;*/
+  /*width: 100%;*/
+  /*max-width: 50ch;*/
+  /*justify-self: center;*/
+/*}*/

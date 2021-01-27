@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../App.css';
 import Header from "../../component/Header"
 import Footer from "../../component/Footer"
@@ -16,118 +16,93 @@ import axios from "axios";
 import moment from "moment";
 import {codepenList, githubRepoList} from "./MainAppUtils";
 
-export default class MainAppContainer extends Component {
 
-    constructor(prop) {
-        super(prop);
+const data = {}
 
-        this.state = {
-            data: {},
-            isDataSynced: false,
-            codepen: {},
-            github: {
-                repos: {},
-                website: {
-                    last_updated: "",
-                },
-            },
-            links: {
-                resume: "",
-                github: "https://github.com/cjoshmartin/",
-                linkedin: "https://www.linkedin.com/in/joshua-martin-55740652/",
-            },
-        }
-    }
+const links = {
+resume: "http://resume.cjoshmartin.com/",
+github: "https://github.com/cjoshmartin/",
+linkedin: "https://www.linkedin.com/in/joshua-martin-55740652/",
+}
 
-    async componentWillMount() {
-        const nextState ={};
+const picture = "https://avatars1.githubusercontent.com/u/8135112?v=3"
 
-        nextState.codepen = await axios.get(`https://cpv2api.herokuapp.com/pens/showcase/cjoshmartin`) // codepen data
-            .then(res => {
-                return codepenList(res)
-            });
 
-        nextState.github = {...this.state.github };
-        nextState.github.repos = await axios.get(`https://api.github.com/users/cjoshmartin/repos?per_page=100`)
-            .then(res => githubRepoList(res));
+export default function MainAppContainer() {
+    const [isDataSynced, setIsDataSynced] = useState(true)
+    const [codepen, setCodepen] = useState({})
+    const [github, setGithub] = useState({
+                    repos: {},
+                    website: {
+                        last_updated: "",
+                    },
+                })
 
-        await axios.get(`https://api.github.com/repos/cjoshmartin/cjoshmartin.github.io`)
-            .then(res => {
-                nextState.github.website.last_updated = moment(res.data.pushed_at, "YYYY-MM-DDThh:mm:ssZ").fromNow();
-            })
 
-        this.setState(
-            nextState,
-            this.syncData()
-        )
-    }
-
-    syncData = () => {
-        this.bindingRef = database.bindToState('/',
-            {
-                context: this,
-                state: 'data',
-                then: () => {
-                    const ordered = {};
-                    const nextState = {...this.state}
-
-                    Object.keys(nextState.data.blog).sort((a,b)=> b-a).forEach(function(key) {
-                        ordered[key] = nextState.data.blog[key];
+    useEffect(() =>{
+        axios.get(`https://cpv2api.herokuapp.com/pens/showcase/cjoshmartin`) // codepen data
+                    .then(res => {
+                        setCodepen(codepenList(res))
                     });
+        
+        Promise.all([
+            axios.get(`https://api.github.com/users/cjoshmartin/repos?per_page=100`),
+            axios.get(`https://api.github.com/repos/cjoshmartin/cjoshmartin.github.io`)
+        ])
+            
+        .then(promises => {
+            const repos = promises[0]
+            const update_date = promises[1]
 
-                    this.setState({
-                        data:{
-                            ...nextState.data,
-                            blog: ordered,
-                        },
-                        links: {
-                            ...nextState.links,
-                          resume:   nextState.data.resume.link
-                        },
-                        isDataSynced: true
-                    })
-                }
+            const _github = {
+                repos: githubRepoList(repos),
+                website: {
+                    last_updated: moment(update_date.data.pushed_at, "YYYY-MM-DDThh:mm:ssZ").fromNow(),
+                },
             }
 
-        )
-    };
+            setGithub(_github)
+        });
 
-    render() {
+    }, [])
+
+
+    
         return (
             <DocumentTitle title="Josh Martin">
                 <div className="App" >
-                    <Header name={this.state.data.name} />
+                    <Header name={data?.name ?? "Josh"} />
                     <IsLoaded
-                        loaded={this.state.isDataSynced } 
+                        loaded={isDataSynced} 
                     >
                         <Switch>
                             <Route
                                 exact={true} path="/"
-                                render={() => (<HomeView {...this.state.data} />)}/>
+                                render={() => (<HomeView picture={picture} />)}/>
 
                             <Route
                                 path="/about"
-                                render={() => (<AboutView {...this.state.data} />)}
+                                render={() => (<AboutView {...data} />)}
                             />
 
                         <Route path="/projects" render={
                                     () => (<ProjectsView
-                                        codepen={this.state.codepen}
-                                        octacats={this.state.octacats}
-                                        github={this.state.github.repos}
-                                        misc_projects={this.state.data.projects}/>
+                                        codepen={codepen}
+                                        //octacats={this.state.octacats}
+                                        github={github.repos}
+                                        misc_projects={data?.projects ?? {}}/>
                                     )}
                                 />
                             </Switch>
 
                             <Footer
-                                {...this.state.data}
-                                links={this.state.links}
-                                last_updated={this.state.github.website.last_updated} />
+                                email={"contact@cjoshmartin.com"}
+                                links={links}
+                                last_updated={github.website.last_updated} />
                         </IsLoaded>
 
                     </div>
                 </DocumentTitle>
         );
-    }
 }
+
