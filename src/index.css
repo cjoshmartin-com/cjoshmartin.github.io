@@ -84,6 +84,54 @@ div.jsonText{
   margin-bottom: 5px;
 }
 
+@media screen and (min-width: 768px) {
+  
+    figure {
+      display: block;
+      margin: 0 auto;
+      padding: 1rem;
+      width:40vw;
+    }
+
+    figure img{
+      width:40vw;
+    }
+   
+  article {
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+    width: 40vw;
+    font-size: 1.5rem;
+  }
+
+}
+
+@media screen and (min-width: 403px) and (max-width: 767px) {
+
+  figure img {
+    width: 40ch;
+}  
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    align-content: baseline;
+
+  }
+
+  article p {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+
+  }
+
+}
+
 
 @media screen and (max-width: 402px) {
 

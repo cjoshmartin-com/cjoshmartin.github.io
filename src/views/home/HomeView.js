@@ -4,11 +4,11 @@ import moment from "moment";
 import PropTypes from 'prop-types'
 import {githubCommitImage, interest, introduction, job, learnMore} from "./HomeUtils";
 
-function PhotoComponent({src, alt_text}){
+function PhotoComponent({src, alt_text, direction="left"}){
 
   return (
-<figure>
-  <img src={src} alt={alt_text ?? ""}  />
+<figure >
+  <img src={src} alt={alt_text ?? ""} />
       <figcaption aria-hidden="true"> <em>{alt_text ?? ""}</em></figcaption>
       </figure>
 
@@ -20,16 +20,18 @@ export default function HomeView(props) {
         <article>
                 <p>Hello, I am Josh. I live <a href="https://en.wikipedia.org/wiki/Chicago" target="_blank">Chicago, IL</a> with my dog (buddy).</p>
 
+                  <section>
                 <PhotoComponent 
                   src={props.picture}
                 />
 
                       <PhotoComponent 
                         src="https://lh3.googleusercontent.com/aiyHCwx2SPEEMUVAC29ABPr0zmfAe_jE52HjGHmFJ7iILQCH-esjbgqIxPINXXRYKSiYsVgepHCqnm-LnWdrM3A2lh-iJdw3YVoSaQbjkYGxAsTZmGaqXqcHHf06n2gnFMMsm9hsFvAvSbpw7-RZ_2F5t01W8B33nGg5PMovQOhOrO2j69rnY_Poa4QIQ_sVG3LYXrVET077h-CXx2jTolpyIa52ktxfeZJsBvzTN0ZiZuMkWK_k8Of8M4eG_iEOsWaxRDUwWQOn8-ZQAdKAPm1izl5KbvmebU6B_-ZThazK8cJClikKVWc1vVqMPl5W-vSWywBvFyyim32q27YBIqLZJ83NGNlTWEWqWOPeD1izVqFUdpkFwQDVtHG8YkDSEcSTYhh9siwrAilkHvCSLNwU97Bx2fY3rAcDsJ3nuisULyGdgx9Si6f_ECnXgtZYu_E-U7OfMT6xGr2bJDbpng-K71DxtISGzccNaLh_2qFa2ov343qXWul73zgnugBRZJLvV9JEbLIvWZ2fdIZDRT89Ggw0P4zekQRNk56UIm7_eFb77O5uLvT3FkyR_25JlbqNYF5gN8ZXHGUi4uFX7C5DL6-uup712ltS7i_5GtFGKDwvKbHyJahNcS2ezlY_NfcNhMnjzXVbah5siwLqHl0g2PqhaGA7iid56yzo7YG8epXiRGX4UB-8rnVsBA=w1596-h2128-no?authuser=0"
-
+                      
                       alt_text="Buddy, the sweetest miniature schnauzer ever "
                       />
 
+                        </section>
                     <p>  I started working as a a Software Engineer about {moment("201910", "YYYYMM").fromNow()}. I graduated (December 2019) with a degree in Computer Engineering (minors in Math and Computer Science) from Purdue University. </p>
 
                         <PhotoComponent 
